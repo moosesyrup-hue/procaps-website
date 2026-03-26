@@ -1329,10 +1329,7 @@ function Section7() {
           }}
           className="text-base md:text-[20px]"
         >
-          Tablets require binders, fillers, coatings, and compression agents to hold their
-          shape. ProCaps produces only capsules — and only the purest form of each nutrient
-          goes inside. No flow agents. No shellac. No artificial dyes. Just the ingredient
-          your body needs.
+          We do not formulate products based on trends, marketing opportunities, or exaggerated claims. Our formulas are based on scientific research and practical experience. We select ingredients for their relevance, compatibility, and effectiveness—not because they are popular or easy to sell.
         </p>
 
         <p
@@ -1346,9 +1343,7 @@ function Section7() {
           }}
           className="text-base md:text-[20px]"
         >
-          Capsules also dissolve faster, delivering ingredients more efficiently to your
-          digestive system. It&rsquo;s a simple choice — but one most brands won&rsquo;t make
-          because tablets are cheaper to produce.
+          Whenever appropriate, we use bioactive forms of nutrients, and we prepare our ingredients as micro-granulated powders to support absorption and ease of digestion. There are no miracle cures—only thoughtful formulations designed to support your health as part of a broader wellness strategy.
         </p>
       </FadeIn>
     </section>
