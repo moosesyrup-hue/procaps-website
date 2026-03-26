@@ -1474,10 +1474,7 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
           }}
           className="text-base md:text-[20px]"
         >
-          Our Henderson, Nevada facility sits in one of the driest climates in North America.
-          Why does that matter? Humidity is the enemy of supplement quality. Our desert location
-          gives us a natural advantage in maintaining the low-humidity environment required to
-          produce the most stable and pure supplements possible.
+          Most supplement brands do not make their own products. We do. At our facility in Henderson, Nevada, we control every aspect of production—from how ingredients are handled to how finished products are prepared. This level of control allows us to maintain standards that would not be possible otherwise.
         </p>
 
         <p
@@ -1492,10 +1489,7 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
           }}
           className="text-base md:text-[20px]"
         >
-          We power our facility entirely with solar energy. From the rooftop arrays to the
-          clean rooms where every capsule is filled, we operate with the smallest possible
-          environmental footprint — because caring about your health and caring about the
-          planet are the same value.
+          Our location in the desert provides an additional advantage: low humidity conditions that allow us to produce ultra-fine powders without relying on additives. Our facility is also powered by solar energy, reflecting a long standing commitment to responsible manufacturing.
         </p>
       </FadeIn>
 
