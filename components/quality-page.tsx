@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Search, Heart, User, ShoppingCart, Play, X } from "lucide-react";
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
@@ -75,6 +75,53 @@ function PlayCircle({ size = 80 }: { size?: number }) {
           marginLeft: size * 0.05,
         }}
       />
+    </div>
+  );
+}
+
+// ─── Fade-in on scroll ────────────────────────────────────────────────────────
+function FadeIn({
+  children,
+  delay = 0,
+  className,
+  style,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(22px)",
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
+        ...style,
+      }}
+    >
+      {children}
     </div>
   );
 }
@@ -548,7 +595,7 @@ function Section2({ onPlay }: { onPlay: () => void }) {
       className="pt-[180px] md:pt-[260px] xl:pt-[300px] px-5 md:px-10 xl:px-[40px]"
     >
       {/* Copy block */}
-      <div
+      <FadeIn
         style={{
           maxWidth: 1000,
           width: "100%",
@@ -607,9 +654,10 @@ function Section2({ onPlay }: { onPlay: () => void }) {
           manufacturing facility in Henderson, Nevada — giving us complete control over every
           stage of production, from raw ingredient sourcing to finished product testing.
         </p>
-      </div>
+      </FadeIn>
 
       {/* Video section */}
+      <FadeIn delay={120} style={{ width: "100%", maxWidth: 1384 }}>
       <div
         role="button"
         tabIndex={0}
@@ -709,6 +757,7 @@ function Section2({ onPlay }: { onPlay: () => void }) {
           </p>
         </div>
       </div>
+      </FadeIn>
     </section>
   );
 }
@@ -747,10 +796,10 @@ function ComparisonCard({
         backgroundColor: bg,
         borderRadius: 20,
         flex: 1,
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         gap: 40,
-        alignSelf: "stretch",
       }}
       className="px-8 py-12 md:px-[60px] md:py-[80px]"
     >
@@ -851,20 +900,24 @@ function Section3() {
           margin: "0 auto",
         }}
       >
-        <ComparisonCard
-          title="Typical brands"
-          subtitle="Store Supplements"
-          bullets={typicalBullets}
-          bg="white"
-          isRight={false}
-        />
-        <ComparisonCard
-          title="ProCaps Laboratories"
-          subtitle="Our Supplements"
-          bullets={procapsBullets}
-          bg={BG_MINT_CARD}
-          isRight={true}
-        />
+        <FadeIn style={{ flex: 1, alignSelf: "stretch", display: "flex" }}>
+          <ComparisonCard
+            title="Typical brands"
+            subtitle="Store Supplements"
+            bullets={typicalBullets}
+            bg="white"
+            isRight={false}
+          />
+        </FadeIn>
+        <FadeIn delay={120} style={{ flex: 1, alignSelf: "stretch", display: "flex" }}>
+          <ComparisonCard
+            title="ProCaps Laboratories"
+            subtitle="Our Supplements"
+            bullets={procapsBullets}
+            bg={BG_MINT_CARD}
+            isRight={true}
+          />
+        </FadeIn>
       </div>
     </section>
   );
@@ -951,7 +1004,7 @@ function Section4() {
       }}
       className="pt-[60px] md:pt-[100px] xl:pt-[120px] pb-[40px] md:pb-[60px] xl:pb-[80px] px-5 md:px-10 xl:px-[40px]"
     >
-      <div
+      <FadeIn
         style={{
           maxWidth: 1000,
           width: "100%",
@@ -1040,7 +1093,7 @@ function Section4() {
         >
           The result: supplements formulated with integrity, designed to work — not just sell.
         </p>
-      </div>
+      </FadeIn>
     </section>
   );
 }
@@ -1077,7 +1130,7 @@ function Section5() {
       className="flex-col md:flex-row px-5 md:px-10 xl:px-[40px] py-[60px] md:py-[80px] xl:py-[120px]"
     >
       {/* Left */}
-      <div
+      <FadeIn
         style={{
           flex: 1,
           maxWidth: 475,
@@ -1135,13 +1188,10 @@ function Section5() {
           finished product — often using independent third-party laboratories to verify our
           own results.
         </p>
-      </div>
+      </FadeIn>
 
       {/* Right */}
-      <div
-        style={{ flex: 1 }}
-        className="w-full md:max-w-[809px]"
-      >
+      <FadeIn delay={150} style={{ flex: 1 }} className="w-full md:max-w-[809px]">
         <img
           src={rightImg}
           alt="Ingredient selection"
@@ -1153,7 +1203,7 @@ function Section5() {
             display: "block",
           }}
         />
-      </div>
+      </FadeIn>
     </section>
   );
 }
@@ -1172,35 +1222,37 @@ function Section6() {
       }}
       className="px-5 md:px-20 xl:px-[240px] py-[80px] md:py-[140px] xl:py-[220px]"
     >
-      <blockquote
-        style={{
-          fontFamily: stix,
-          fontSize: 36,
-          fontWeight: 400,
-          color: DARK_TEAL,
-          lineHeight: 1.5,
-          letterSpacing: "-0.72px",
-          margin: 0,
-          marginBottom: 24,
-          maxWidth: 900,
-        }}
-        className="text-[22px] md:text-[28px] xl:text-[36px]"
-      >
-        &ldquo;We will never compromise on ingredient quality. Your health depends on it.&rdquo;
-      </blockquote>
-      <p
-        style={{
-          fontFamily: inter,
-          fontSize: 20,
-          fontWeight: 400,
-          color: DARK_TEAL,
-          lineHeight: 1.4,
-          margin: 0,
-        }}
-        className="text-base md:text-[20px]"
-      >
-        - Andrew Lessman, Founder
-      </p>
+      <FadeIn style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+        <blockquote
+          style={{
+            fontFamily: stix,
+            fontSize: 36,
+            fontWeight: 400,
+            color: DARK_TEAL,
+            lineHeight: 1.5,
+            letterSpacing: "-0.72px",
+            margin: 0,
+            marginBottom: 24,
+            maxWidth: 900,
+          }}
+          className="text-[22px] md:text-[28px] xl:text-[36px]"
+        >
+          &ldquo;We will never compromise on ingredient quality. Your health depends on it.&rdquo;
+        </blockquote>
+        <p
+          style={{
+            fontFamily: inter,
+            fontSize: 20,
+            fontWeight: 400,
+            color: DARK_TEAL,
+            lineHeight: 1.4,
+            margin: 0,
+          }}
+          className="text-base md:text-[20px]"
+        >
+          - Andrew Lessman, Founder
+        </p>
+      </FadeIn>
     </section>
   );
 }
@@ -1219,10 +1271,7 @@ function Section7() {
       className="flex-col-reverse md:flex-row px-5 md:px-10 xl:px-[40px] py-[60px] md:py-[80px] xl:py-[120px]"
     >
       {/* Left: Image */}
-      <div
-        style={{ flex: 1 }}
-        className="w-full md:max-w-[809px]"
-      >
+      <FadeIn style={{ flex: 1 }} className="w-full md:max-w-[809px]">
         <img
           src={right1Img}
           alt="ProCaps capsules"
@@ -1234,10 +1283,11 @@ function Section7() {
             display: "block",
           }}
         />
-      </div>
+      </FadeIn>
 
       {/* Right: Content */}
-      <div
+      <FadeIn
+        delay={150}
         style={{
           flex: 1,
           maxWidth: 475,
@@ -1311,7 +1361,7 @@ function Section7() {
           digestive system. It&rsquo;s a simple choice — but one most brands won&rsquo;t make
           because tablets are cheaper to produce.
         </p>
-      </div>
+      </FadeIn>
     </section>
   );
 }
@@ -1337,7 +1387,7 @@ function VideoCard({ title, onPlay }: { title: string; onPlay: () => void }) {
         alignItems: "center",
         justifyContent: "center",
         gap: 40,
-        flex: "1 0 0",
+        width: "100%",
         padding: "32px 19px",
         cursor: "pointer",
         minWidth: 0,
@@ -1386,7 +1436,7 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
       className="pt-[60px] md:pt-[100px] xl:pt-[120px] pb-0 px-5 md:px-10 xl:px-[40px]"
     >
       {/* Copy block */}
-      <div
+      <FadeIn
         style={{
           maxWidth: 1000,
           width: "100%",
@@ -1462,7 +1512,7 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
           environmental footprint — because caring about your health and caring about the
           planet are the same value.
         </p>
-      </div>
+      </FadeIn>
 
       {/* Video cards row */}
       <div
@@ -1475,9 +1525,15 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
           alignItems: "stretch",
         }}
       >
-        <VideoCard title={"Ingredient Transparency.\nPure Formulas."} onPlay={() => onVideoPlay("ingredient-transparency")} />
-        <VideoCard title={"All-Solar Powered Manufacturing Facility, Henderson, NV"} onPlay={() => onVideoPlay("solar-manufacturing")} />
-        <VideoCard title={"Made In-House.\nNever Outsourced."} onPlay={() => onVideoPlay("made-in-house")} />
+        <FadeIn style={{ flex: "1 0 0" }}>
+          <VideoCard title={"Ingredient Transparency.\nPure Formulas."} onPlay={() => onVideoPlay("ingredient-transparency")} />
+        </FadeIn>
+        <FadeIn delay={100} style={{ flex: "1 0 0" }}>
+          <VideoCard title={"All-Solar Powered Manufacturing Facility, Henderson, NV"} onPlay={() => onVideoPlay("solar-manufacturing")} />
+        </FadeIn>
+        <FadeIn delay={200} style={{ flex: "1 0 0" }}>
+          <VideoCard title={"Made In-House.\nNever Outsourced."} onPlay={() => onVideoPlay("made-in-house")} />
+        </FadeIn>
       </div>
     </section>
   );
@@ -1516,7 +1572,7 @@ function Section9({ onPlay }: { onPlay: () => void }) {
       className="flex-col md:flex-row px-5 md:px-10 xl:px-[40px] py-[60px] md:py-[80px] xl:py-[120px]"
     >
       {/* Left */}
-      <div
+      <FadeIn
         style={{
           flex: 1,
           maxWidth: 475,
@@ -1585,13 +1641,10 @@ function Section9({ onPlay }: { onPlay: () => void }) {
           When you understand what goes into your supplements and why, you make better
           decisions for your health. That&rsquo;s been Andrew&rsquo;s mission since 1979.
         </p>
-      </div>
+      </FadeIn>
 
       {/* Right: Photo + play icon */}
-      <div
-        style={{ flex: 1 }}
-        className="w-full md:max-w-[809px]"
-      >
+      <FadeIn delay={150} style={{ flex: 1 }} className="w-full md:max-w-[809px]">
         <div
           role="button"
           tabIndex={0}
@@ -1654,7 +1707,7 @@ function Section9({ onPlay }: { onPlay: () => void }) {
             />
           </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }
@@ -1673,34 +1726,36 @@ function Section10() {
       }}
       className="px-5 md:px-20 xl:px-[240px] py-[80px] md:py-[140px] xl:py-[220px]"
     >
-      <blockquote
-        style={{
-          fontFamily: stix,
-          fontWeight: 400,
-          color: DARK_TEAL,
-          lineHeight: 1.5,
-          letterSpacing: "-0.72px",
-          margin: 0,
-          marginBottom: 24,
-          maxWidth: 900,
-        }}
-        className="text-[22px] md:text-[28px] xl:text-[36px]"
-      >
-        &ldquo;It&rsquo;s not important that you get the products I offer, but it is important
-        that you get the information I share.&rdquo;
-      </blockquote>
-      <p
-        style={{
-          fontFamily: inter,
-          fontWeight: 400,
-          color: DARK_TEAL,
-          lineHeight: 1.4,
-          margin: 0,
-        }}
-        className="text-base md:text-[20px]"
-      >
-        - Andrew Lessman, Founder
-      </p>
+      <FadeIn style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+        <blockquote
+          style={{
+            fontFamily: stix,
+            fontWeight: 400,
+            color: DARK_TEAL,
+            lineHeight: 1.5,
+            letterSpacing: "-0.72px",
+            margin: 0,
+            marginBottom: 24,
+            maxWidth: 900,
+          }}
+          className="text-[22px] md:text-[28px] xl:text-[36px]"
+        >
+          &ldquo;It&rsquo;s not important that you get the products I offer, but it is important
+          that you get the information I share.&rdquo;
+        </blockquote>
+        <p
+          style={{
+            fontFamily: inter,
+            fontWeight: 400,
+            color: DARK_TEAL,
+            lineHeight: 1.4,
+            margin: 0,
+          }}
+          className="text-base md:text-[20px]"
+        >
+          - Andrew Lessman, Founder
+        </p>
+      </FadeIn>
     </section>
   );
 }
@@ -1731,7 +1786,7 @@ function TestimonialCard({ quote, name, role }: { quote: string; name: string; r
   return (
     <div
       style={{
-        flex: "1 0 0",
+        width: "100%",
         minWidth: 0,
         height: 369,
         backgroundColor: "white",
@@ -1864,12 +1919,14 @@ function Section11() {
         className="flex-col md:flex-row"
       >
         {testimonials.map((t, i) => (
-          <TestimonialCard key={i} {...t} />
+          <FadeIn key={i} delay={i * 100} style={{ flex: "1 0 0" }}>
+            <TestimonialCard {...t} />
+          </FadeIn>
         ))}
       </div>
 
       {/* Stats row */}
-      <div
+      <FadeIn
         style={{
           maxWidth: 1320,
           width: "100%",
@@ -1987,7 +2044,7 @@ function Section11() {
             Years of excellence
           </p>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }
