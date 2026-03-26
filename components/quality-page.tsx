@@ -1175,11 +1175,7 @@ function Section5() {
           }}
           className="text-base md:text-[20px]"
         >
-          We don't simply order ingredients from the lowest bidder. Every ingredient we use
-          must meet our strict purity and potency specifications before it ever enters our
-          facility. We test incoming raw materials, test during manufacturing, and test the
-          finished product — often using independent third-party laboratories to verify our
-          own results.
+          We do not formulate products based on trends, marketing opportunities, or exaggerated claims. Our formulas are based on scientific research and practical experience. We select ingredients for their relevance, compatibility, and effectiveness—not because they are popular or easy to sell. Whenever appropriate, we use bioactive forms of nutrients, and we prepare our ingredients as micro-granulated powders to support absorption and ease of digestion. There are no miracle cures—only thoughtful formulations designed to support your health as part of a broader wellness strategy.
         </p>
       </FadeIn>
 
