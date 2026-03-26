@@ -499,7 +499,7 @@ function Banner() {
           fontFamily: stix,
           color: "white",
           textAlign: "center",
-          letterSpacing: "-2.4px",
+          letterSpacing: "-1.5px",
           lineHeight: 1.1,
           margin: 0,
           marginBottom: 40,
@@ -612,6 +612,7 @@ function Section2({ onPlay }: { onPlay: () => void }) {
             fontFamily: stix,
             color: DARK_TEAL,
             lineHeight: 1.1,
+            letterSpacing: "-1.5px",
             margin: 0,
             fontWeight: 400,
           }}
@@ -1019,7 +1020,7 @@ function Section4() {
           style={{
             fontFamily: stix,
             lineHeight: 1.1,
-            letterSpacing: "-1.84px",
+            letterSpacing: "-1.5px",
             margin: 0,
             fontWeight: 400,
           }}
@@ -1452,6 +1453,7 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
           style={{
             fontFamily: stix,
             lineHeight: 1.1,
+            letterSpacing: "-1.5px",
             margin: 0,
             fontWeight: 400,
           }}
@@ -1883,6 +1885,7 @@ function Section11() {
             fontWeight: 400,
             color: DARK_TEAL,
             lineHeight: 1.1,
+            letterSpacing: "-1.5px",
             margin: 0,
           }}
           className="text-[42px] md:text-[64px] xl:text-[92px]"
