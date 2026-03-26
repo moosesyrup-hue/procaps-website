@@ -650,10 +650,7 @@ function Section2({ onPlay }: { onPlay: () => void }) {
           }}
           className="text-base md:text-[20px]"
         >
-          Most supplements are manufactured by third-party contract facilities that serve dozens
-          of brands simultaneously. At ProCaps, we own and operate our own state-of-the-art
-          manufacturing facility in Henderson, Nevada — giving us complete control over every
-          stage of production, from raw ingredient sourcing to finished product testing.
+          The reality is that most supplement companies don&rsquo;t manufacture their own products. They are brands—not manufacturers—relying on third parties to produce formulas that often include unnecessary additives. Tablets, for example, require binders, glues, lubricants, and coatings just to hold together. These are not there for your benefit—they are there for manufacturing convenience. Because we manufacture our own products, we&rsquo;re able to avoid these manufacturing shortcuts and choose delivery forms that prioritize ingredient integrity over production convenience.
         </p>
       </FadeIn>
 
