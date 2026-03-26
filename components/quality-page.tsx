@@ -769,10 +769,10 @@ const typicalBullets = [
 ];
 
 const procapsBullets = [
-  "Vertically integrated — we manufacture everything",
-  "Full label transparency — exact amounts listed",
-  "Zero fillers, binders, or artificial additives",
-  "Dual-tested by independent third-party labs",
+  "We manufacture what we distribute",
+  "No unnecessary additives, binders or fillers",
+  "Capsule-based delivery using additive-free powders",
+  "Complete control over every step of production",
 ];
 
 function ComparisonCard({
