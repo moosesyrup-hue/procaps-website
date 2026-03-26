@@ -1054,9 +1054,7 @@ function Section4() {
           }}
           className="text-base md:text-[20px]"
         >
-          Andrew Lessman has spent over four decades studying the science of human nutrition.
-          Every ProCaps formula begins with published research, not market trends. We ask one
-          question: what does the science actually support?
+          We do not formulate products based on trends, marketing opportunities, or exaggerated claims. Our formulas are based on scientific research and practical experience. We select ingredients for their relevance, compatibility, and effectiveness—not because they are popular or easy to sell.
         </p>
 
         <p
@@ -1071,10 +1069,7 @@ function Section4() {
           }}
           className="text-base md:text-[20px]"
         >
-          That means no mega-doses designed to look impressive on labels, no trending
-          ingredients without clinical backing, and no combinations chosen for their marketing
-          appeal rather than their synergy. We dose based on what your body can actually absorb
-          and benefit from.
+          Whenever appropriate, we use bioactive forms of nutrients, and we prepare our ingredients as micro-granulated powders to support absorption and ease of digestion.
         </p>
 
         <p
@@ -1089,7 +1084,7 @@ function Section4() {
           }}
           className="text-base md:text-[20px]"
         >
-          The result: supplements formulated with integrity, designed to work — not just sell.
+          There are no miracle cures—only thoughtful formulations designed to support your health as part of a broader wellness strategy.
         </p>
       </FadeIn>
     </section>
