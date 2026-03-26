@@ -763,9 +763,9 @@ function Section2({ onPlay }: { onPlay: () => void }) {
 // ─── 4. Section 3 (Comparison cards) ─────────────────────────────────────────
 const typicalBullets = [
   "Manufactured by third parties",
-  "Proprietary blends that hide ingredient amounts",
-  "Artificial colors, flavors, and binders",
-  "Limited testing and quality controls",
+  "Often include binders, fillers, lubricants and coatings",
+  "Hard tablets require additives to maintain structure",
+  "Limited control over production and quality",
 ];
 
 const procapsBullets = [
