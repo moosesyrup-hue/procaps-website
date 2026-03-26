@@ -1601,9 +1601,7 @@ function Section9({ onPlay }: { onPlay: () => void }) {
           }}
           className="text-base md:text-[20px]"
         >
-          ProCaps publishes full Certificates of Analysis for our products. We list every
-          ingredient by its exact amount — not hidden in a proprietary blend. We share our
-          manufacturing practices and welcome scrutiny because we have nothing to hide.
+          For more than four decades, we have believed that informed decisions lead to better outcomes. That belief doesn&rsquo;t just guide how we speak—it guides how we make our products. From ingredient selection to manufacturing and testing, every decision is rooted in science and transparency.
         </p>
 
         <p
@@ -1617,8 +1615,7 @@ function Section9({ onPlay }: { onPlay: () => void }) {
           }}
           className="text-base md:text-[20px]"
         >
-          When you understand what goes into your supplements and why, you make better
-          decisions for your health. That&rsquo;s been Andrew&rsquo;s mission since 1979.
+          We focus on providing clear, science-based information so you can decide what is right for you—because quality is not just what we make, it&rsquo;s what you understand.
         </p>
       </FadeIn>
 
