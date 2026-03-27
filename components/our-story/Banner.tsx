@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { stix, inter, AQUA, pillLargeImg } from "../quality/tokens";
+import { stix, inter, AQUA } from "../quality/tokens";
+
+const pillLargeImg = "https://www.figma.com/api/mcp/asset/8d774dc1-40d5-431f-ab89-8522ba6ffba8";
 
 export function Banner() {
   const [mounted, setMounted] = useState(false);
