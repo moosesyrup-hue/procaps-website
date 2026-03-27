@@ -70,7 +70,7 @@ export function VideoHero() {
             fontWeight: 400,
             textWrap: "balance",
           }}
-          className="text-[36px] md:text-[56px] xl:text-[72px]"
+          className="text-[42px] md:text-[64px] xl:text-[92px]"
         >
           Supplements p<em style={{ fontStyle: "italic" }}>ow</em>ered by the sun.
         </h2>
@@ -79,7 +79,7 @@ export function VideoHero() {
           style={{
             fontFamily: inter,
             fontWeight: 400,
-            color: "rgba(255,255,255,0.85)",
+            color: "white",
             lineHeight: 1.6,
             letterSpacing: "-0.4px",
             margin: 0,
