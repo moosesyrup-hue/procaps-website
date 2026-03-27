@@ -86,7 +86,7 @@ export function VideoHero() {
             maxWidth: 620,
             textWrap: "pretty",
           }}
-          className="text-base md:text-[18px]"
+          className="text-base md:text-[20px]"
         >
           At ProCaps Laboratories, we manufacture our products at our headquarters in Henderson, Nevada — a facility powered by one of the largest private solar installations in the supplement industry, long before sustainability became standard. We design our operations with environmental responsibility in mind, minimizing waste, optimizing efficiency and reducing our reliance on non-renewable resources wherever possible.
         </p>
