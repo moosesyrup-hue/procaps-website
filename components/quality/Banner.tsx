@@ -75,7 +75,7 @@ export function Banner() {
           maxWidth: 719,
           textAlign: "center",
           letterSpacing: "-0.4px",
-          lineHeight: "28px",
+          lineHeight: 1.4,
           margin: 0,
           marginBottom: 80,
           ...entrance(600),
