@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Heart, User, ShoppingCart } from "lucide-react";
+import { Search, Heart, User, ShoppingCart, Menu } from "lucide-react";
 import { inter, stix, TEAL } from "./tokens";
 
 export function Header() {
@@ -59,7 +59,7 @@ export function Header() {
       {/* ── Nav row ── */}
       <div style={{ height: 62, position: "relative" }}>
 
-        {/* Left: nav links */}
+        {/* Left: hamburger (mobile) / nav links (desktop) */}
         <div
           style={{
             position: "absolute",
@@ -70,8 +70,11 @@ export function Header() {
             alignItems: "center",
             gap: 40,
           }}
-          className="hidden md:flex"
         >
+          {/* Hamburger — mobile only */}
+          <Menu style={iconStyle} strokeWidth={1.5} className="md:hidden" />
+
+          {/* Nav links — desktop only */}
           {["SHOP", "QUALITY", "OUR STORY", "SPECIALS"].map((link) => (
             <a
               key={link}
@@ -85,6 +88,7 @@ export function Header() {
                 textDecoration: "none",
                 whiteSpace: "nowrap",
               }}
+              className="hidden md:block"
             >
               {link}
             </a>
@@ -120,7 +124,7 @@ export function Header() {
           }}
         >
           <Search style={iconStyle} strokeWidth={1.5} />
-          <Heart style={iconStyle} strokeWidth={1.5} />
+          <Heart style={iconStyle} strokeWidth={1.5} className="hidden md:block" />
           <User style={iconStyle} strokeWidth={1.5} className="hidden md:block" />
           <ShoppingCart style={iconStyle} strokeWidth={1.5} />
         </div>
