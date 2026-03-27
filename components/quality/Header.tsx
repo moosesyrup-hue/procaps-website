@@ -16,8 +16,7 @@ export function Header() {
     <header
       style={{
         backgroundColor: TEAL,
-        position: "sticky",
-        top: 0,
+        position: "relative",
         zIndex: 50,
         display: "flex",
         flexDirection: "column",

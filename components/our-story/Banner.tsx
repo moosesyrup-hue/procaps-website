@@ -31,7 +31,7 @@ export function Banner() {
         overflow: "visible",
         zIndex: 2,
       }}
-      className="min-h-[500px] md:min-h-[700px] xl:h-[875px] px-5 md:px-10 pt-[40px] xl:pt-[58px]"
+      className="min-h-[600px] md:min-h-[900px] xl:h-[1050px] px-5 md:px-10 pt-[40px] xl:pt-[58px]"
     >
       {/* Vertical decorative line */}
       <div style={{ height: 111, marginBottom: 48, flexShrink: 0, display: "flex", alignItems: "flex-start" }}>
@@ -66,7 +66,7 @@ export function Banner() {
           fontStyle: "italic",
           fontWeight: 400,
           transition: "color 0.8s ease 900ms",
-        }}>Uniquely.</em>
+        }}>uniquely.</em>
         <br />
         <span style={{ fontWeight: 400 }}>For a reason.</span>
       </h1>
