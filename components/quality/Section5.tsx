@@ -68,7 +68,53 @@ export function Section5() {
           }}
           className="text-base md:text-[20px]"
         >
-          We do not formulate products based on trends, marketing opportunities, or exaggerated claims. Our formulas are based on scientific research and practical experience. We select ingredients for their relevance, compatibility, and effectiveness—not because they are popular or easy to sell. Whenever appropriate, we use bioactive forms of nutrients, and we prepare our ingredients as micro-granulated powders to support absorption and ease of digestion. There are no miracle cures—only thoughtful formulations designed to support your health as part of a broader wellness strategy.
+          Quality begins long before manufacturing. We source our ingredients from established, internationally recognized suppliers who meet strict standards for identity, purity, and consistency.
+        </p>
+
+        <p
+          style={{
+            fontFamily: inter,
+            fontWeight: 500,
+            color: DARK_TEAL,
+            lineHeight: 1.4,
+            letterSpacing: "-0.4px",
+            margin: 0,
+          }}
+          className="text-base md:text-[20px]"
+        >
+          Every ingredient:
+        </p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {[
+            "Arrives with a Certificate of Analysis",
+            "Undergoes independent third-party testing",
+            "Is verified again in our own state-of-the-art laboratory",
+          ].map((item, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: TEAL, flexShrink: 0, marginTop: 8 }} />
+              <span
+                style={{ fontFamily: inter, fontWeight: 400, color: DARK_TEAL, lineHeight: 1.4, letterSpacing: "-0.4px" }}
+                className="text-base md:text-[20px]"
+              >
+                {item}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <p
+          style={{
+            fontFamily: inter,
+            fontWeight: 400,
+            color: DARK_TEAL,
+            lineHeight: 1.4,
+            letterSpacing: "-0.4px",
+            margin: 0,
+          }}
+          className="text-base md:text-[20px]"
+        >
+          This multi-step process ensures that every ingredient meets our standards before it is ever used. Most companies would consider this sufficient. We consider it the minimum.
         </p>
       </FadeIn>
 
