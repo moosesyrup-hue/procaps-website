@@ -468,6 +468,21 @@ function Header() {
 
 // ─── 2. Banner ────────────────────────────────────────────────────────────────
 function Banner() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 60);
+    return () => clearTimeout(t);
+  }, []);
+
+  function entrance(delay: number, extraStyle?: React.CSSProperties): React.CSSProperties {
+    return {
+      opacity: mounted ? 1 : 0,
+      transform: mounted ? "translateY(0)" : "translateY(16px)",
+      transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
+      ...extraStyle,
+    };
+  }
+
   return (
     <section
       style={{
@@ -482,14 +497,16 @@ function Banner() {
       }}
       className="min-h-[500px] md:min-h-[700px] xl:h-[875px] px-5 md:px-10 pt-[40px] xl:pt-[58px]"
     >
-      {/* Vertical decorative line */}
+      {/* Vertical decorative line — draws downward */}
       <div
         style={{
           width: 1,
-          height: 111,
           backgroundColor: "rgba(255,255,255,0.5)",
           marginBottom: 48,
           flexShrink: 0,
+          height: mounted ? 111 : 0,
+          opacity: mounted ? 1 : 0,
+          transition: "height 0.6s ease 0ms, opacity 0.6s ease 0ms",
         }}
       />
 
@@ -503,6 +520,7 @@ function Banner() {
           lineHeight: 1.1,
           margin: 0,
           marginBottom: 40,
+          ...entrance(350),
         }}
         className="text-[56px] md:text-[80px] xl:text-[120px]"
       >
@@ -524,6 +542,7 @@ function Banner() {
           lineHeight: "28px",
           margin: 0,
           marginBottom: 80,
+          ...entrance(600),
         }}
         className="text-base md:text-[20px]"
       >
@@ -541,6 +560,7 @@ function Banner() {
           height: 472,
           overflow: "hidden",
           zIndex: 10,
+          ...entrance(900, { transform: `translateX(-50%) translateY(${mounted ? "0" : "16px"})` }),
         }}
       >
         <img
@@ -563,10 +583,10 @@ function Banner() {
         style={{
           top: "100%",
           left: "50%",
-          transform: "translateX(-50%) translateY(-35%)",
           width: "90%",
           maxWidth: 680,
           zIndex: 10,
+          ...entrance(900, { transform: `translateX(-50%) translateY(${mounted ? "-35%" : "calc(-35% + 16px)"})`  }),
         }}
       >
         <img
