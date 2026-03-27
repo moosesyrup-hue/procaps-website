@@ -32,6 +32,7 @@ export function Section4() {
             letterSpacing: "-1.5px",
             margin: 0,
             fontWeight: 400,
+            textWrap: "balance",
           }}
           className="text-[42px] md:text-[64px] xl:text-[92px]"
         >
