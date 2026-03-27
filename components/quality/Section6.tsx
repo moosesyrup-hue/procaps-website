@@ -20,7 +20,6 @@ export function Section6() {
         <blockquote
           style={{
             fontFamily: stix,
-            fontSize: 36,
             fontWeight: 400,
             color: DARK_TEAL,
             lineHeight: 1.5,
