@@ -37,6 +37,7 @@ export function Section4() {
           className="text-[42px] md:text-[64px] xl:text-[92px]"
         >
           <em style={{ color: TEAL, fontStyle: "italic" }}>Formulation</em>
+          <br className="md:hidden" />
           <span style={{ color: DARK_TEAL }}> without hype.</span>
         </h2>
 
