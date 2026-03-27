@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeIn } from "./FadeIn";
-import { stix, inter, TEAL, DARK_TEAL, BG_MINT, BG_MINT_CARD } from "./tokens";
+import { BulletCheck, stix, inter, TEAL, DARK_TEAL, BG_MINT, BG_MINT_CARD } from "./tokens";
 
 const typicalBullets = [
   "Manufactured by third parties",
@@ -79,31 +79,27 @@ function ComparisonCard({
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
         {bullets.map((item, i) => (
           <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
-            <div
-              style={{
-                width: 22,
-                height: 22,
-                borderRadius: "50%",
-                backgroundColor: isRight ? TEAL : "#C8272D",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
-                marginTop: 2,
-              }}
-            >
-              <span
+            {isRight ? (
+              <BulletCheck />
+            ) : (
+              <div
                 style={{
-                  color: "white",
-                  fontSize: 11,
-                  fontWeight: 700,
-                  fontFamily: inter,
-                  lineHeight: 1,
+                  width: 20,
+                  height: 20,
+                  borderRadius: "50%",
+                  backgroundColor: "#C8272D",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  marginTop: 2,
                 }}
               >
-                {isRight ? "✓" : "✕"}
-              </span>
-            </div>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M2 2L8 8M8 2L2 8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+                </svg>
+              </div>
+            )}
             <span
               style={{
                 fontFamily: inter,
