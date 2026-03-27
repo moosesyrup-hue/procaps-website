@@ -35,7 +35,6 @@ export function Section6() {
         <p
           style={{
             fontFamily: inter,
-            fontSize: 20,
             fontWeight: 400,
             color: DARK_TEAL,
             lineHeight: 1.4,
