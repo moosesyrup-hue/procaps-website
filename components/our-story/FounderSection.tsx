@@ -143,7 +143,7 @@ export function FounderSection({ onPlay }: { onPlay: () => void }) {
           className="w-full md:max-w-[475px]"
         >
           {/* Teal signature via CSS mask */}
-          <div style={{ position: "relative", display: "inline-block", height: 48, width: 310 }}>
+          <div style={{ position: "relative", display: "inline-block", height: 48, width: 310, marginBottom: 12 }}>
             <img src={signatureImg} alt="" style={{ height: 48, width: 310, objectFit: "contain", display: "block", opacity: 0 }} />
             <div style={{
               position: "absolute",
@@ -188,7 +188,7 @@ export function FounderSection({ onPlay }: { onPlay: () => void }) {
             Andrew endeavors to be a voice of reason encouraging ethical products amid an industry overrun by contract manufacturers and deceptive claims on social media. ProCaps remains one of the few companies making all its products, including their additive-free nutritional supplements and wellness products — all produced in their 100% solar-powered facilities in Henderson, Nevada.
           </p>
 
-          <div>
+          <div style={{ marginTop: 12 }}>
             <button
               style={{
                 fontFamily: inter,
