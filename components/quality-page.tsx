@@ -890,7 +890,7 @@ function ComparisonCard({
                 color: DARK_TEAL,
                 lineHeight: 1.4,
               }}
-              className="text-sm md:text-[20px]"
+              className="text-base md:text-[20px]"
             >
               {item}
             </span>
@@ -967,6 +967,19 @@ function TickerBar() {
         .ticker-track {
           animation: ticker-scroll 18s linear infinite;
           will-change: transform;
+        }
+        .snap-carousel {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        .snap-carousel::-webkit-scrollbar { display: none; }
+        .snap-card {
+          scroll-snap-align: center;
+          flex-shrink: 0;
         }
       `}</style>
 
@@ -1370,6 +1383,55 @@ function Section7() {
   );
 }
 
+// ─── Peek Carousel (mobile only) ─────────────────────────────────────────────
+function PeekCarousel({ children }: { children: React.ReactNode[] }) {
+  const [active, setActive] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  function onScroll() {
+    const el = trackRef.current;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / children.length;
+    setActive(Math.round(el.scrollLeft / cardWidth));
+  }
+
+  return (
+    <div style={{ width: "100%" }}>
+      <div
+        ref={trackRef}
+        className="snap-carousel"
+        onScroll={onScroll}
+        style={{ gap: 12, paddingLeft: 20, paddingRight: 20 }}
+      >
+        {children.map((child, i) => (
+          <div
+            key={i}
+            className="snap-card"
+            style={{ width: "82vw", maxWidth: 360 }}
+          >
+            {child}
+          </div>
+        ))}
+      </div>
+      {/* Dots */}
+      <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 20 }}>
+        {children.map((_, i) => (
+          <div
+            key={i}
+            style={{
+              width: i === active ? 20 : 6,
+              height: 6,
+              borderRadius: 3,
+              backgroundColor: i === active ? TEAL : "rgba(0,146,150,0.25)",
+              transition: "width 0.3s ease, background-color 0.3s ease",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── 11. Section 8 ("Manufacturing under our control") ───────────────────────
 function VideoCard({ title, onPlay }: { title: string; onPlay: () => void }) {
   const [hovered, setHovered] = useState(false);
@@ -1513,17 +1575,8 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
         </p>
       </FadeIn>
 
-      {/* Video cards row */}
-      <div
-        className="flex-col md:flex-row"
-        style={{
-          width: "100%",
-          maxWidth: 1320,
-          display: "flex",
-          gap: 20,
-          alignItems: "stretch",
-        }}
-      >
+      {/* Video cards — carousel on mobile, row on desktop */}
+      <div className="hidden md:flex" style={{ width: "100%", maxWidth: 1320, gap: 20, alignItems: "stretch" }}>
         <FadeIn style={{ flex: "1 0 0" }}>
           <VideoCard title={"Ingredient Transparency.\nPure Formulas."} onPlay={() => onVideoPlay("ingredient-transparency")} />
         </FadeIn>
@@ -1533,6 +1586,15 @@ function Section8({ onVideoPlay }: { onVideoPlay: (id: VideoId) => void }) {
         <FadeIn delay={200} style={{ flex: "1 0 0" }}>
           <VideoCard title={"Made In-House.\nNever Outsourced."} onPlay={() => onVideoPlay("made-in-house")} />
         </FadeIn>
+      </div>
+      <div className="md:hidden w-full">
+        <PeekCarousel>
+          {[
+            <VideoCard key="a" title={"Ingredient Transparency.\nPure Formulas."} onPlay={() => onVideoPlay("ingredient-transparency")} />,
+            <VideoCard key="b" title={"All-Solar Powered Manufacturing Facility, Henderson, NV"} onPlay={() => onVideoPlay("solar-manufacturing")} />,
+            <VideoCard key="c" title={"Made In-House.\nNever Outsourced."} onPlay={() => onVideoPlay("made-in-house")} />,
+          ]}
+        </PeekCarousel>
       </div>
     </section>
   );
@@ -1903,23 +1965,23 @@ function Section11() {
         </p>
       </div>
 
-      {/* Testimonial cards */}
+      {/* Testimonial cards — carousel on mobile, row on desktop */}
       <div
-        style={{
-          maxWidth: 1320,
-          width: "100%",
-          display: "flex",
-          gap: 20,
-          alignItems: "stretch",
-          marginBottom: 60,
-        }}
-        className="flex-col md:flex-row"
+        className="hidden md:flex"
+        style={{ maxWidth: 1320, width: "100%", gap: 20, alignItems: "stretch", marginBottom: 60 }}
       >
         {testimonials.map((t, i) => (
           <FadeIn key={i} delay={i * 100} style={{ flex: "1 0 0" }}>
             <TestimonialCard {...t} />
           </FadeIn>
         ))}
+      </div>
+      <div className="md:hidden w-full" style={{ marginBottom: 60 }}>
+        <PeekCarousel>
+          {testimonials.map((t, i) => (
+            <TestimonialCard key={i} {...t} />
+          ))}
+        </PeekCarousel>
       </div>
 
       {/* Stats row */}
