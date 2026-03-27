@@ -78,7 +78,7 @@ export function Header() {
           {["SHOP", "QUALITY", "OUR STORY", "SPECIALS"].map((link) => (
             <a
               key={link}
-              href={link === "QUALITY" ? "/quality" : "#"}
+              href={link === "QUALITY" ? "/quality" : link === "OUR STORY" ? "/our-story" : "#"}
               style={{
                 fontFamily: inter,
                 fontSize: 16,
