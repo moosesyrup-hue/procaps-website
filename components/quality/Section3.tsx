@@ -23,12 +23,14 @@ function ComparisonCard({
   bullets,
   bg,
   isRight,
+  border,
 }: {
   title: string;
   subtitle: string;
   bullets: string[];
   bg: string;
   isRight?: boolean;
+  border?: string;
 }) {
   return (
     <div
@@ -40,6 +42,7 @@ function ComparisonCard({
         display: "flex",
         flexDirection: "column",
         gap: 40,
+        ...(border ? { border } : {}),
       }}
       className="px-8 py-12 md:px-[60px] md:py-[80px]"
     >
@@ -142,6 +145,7 @@ export function Section3() {
             bullets={typicalBullets}
             bg="white"
             isRight={false}
+            border="1px solid rgba(0, 146, 150, 0.15)"
           />
         </FadeIn>
         <FadeIn delay={120} style={{ flex: 1, alignSelf: "stretch", display: "flex" }}>
