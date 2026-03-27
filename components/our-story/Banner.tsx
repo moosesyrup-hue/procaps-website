@@ -62,7 +62,7 @@ export function Banner() {
       >
         <span style={{ fontWeight: 400 }}>Made </span>
         <em style={{
-          color: AQUA,
+          color: mounted ? AQUA : "white",
           fontStyle: "italic",
           fontWeight: 400,
           transition: "color 0.8s ease 900ms",
