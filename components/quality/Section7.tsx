@@ -85,7 +85,7 @@ export function Section7() {
           }}
           className="text-base md:text-[20px]"
         >
-          We do not formulate products based on trends, marketing opportunities, or exaggerated claims. Our formulas are based on scientific research and practical experience. We select ingredients for their relevance, compatibility, and effectiveness—not because they are popular or easy to sell.
+          Tablets exist for one reason: they are easier and less expensive to manufacture. But tablets require binders, glues, lubricants and coatings—ingredients that serve the manufacturing process, not your health. That is why we do not make tablets.
         </p>
 
         <p
@@ -99,8 +99,40 @@ export function Section7() {
           }}
           className="text-base md:text-[20px]"
         >
-          Whenever appropriate, we use bioactive forms of nutrients, and we prepare our ingredients as micro-granulated powders to support absorption and ease of digestion. There are no miracle cures—only thoughtful formulations designed to support your health as part of a broader wellness strategy.
+          Instead, we use capsules filled with ultra-fine, additive-free powders. This allows us to deliver nutrients in their intended form without unnecessary ingredients.
         </p>
+
+        <p
+          style={{
+            fontFamily: inter,
+            fontWeight: 500,
+            color: DARK_TEAL,
+            lineHeight: 1.4,
+            letterSpacing: "-0.4px",
+            margin: 0,
+          }}
+          className="text-base md:text-[20px]"
+        >
+          Our approach is designed to:
+        </p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {[
+            "Preserve the integrity of the ingredients",
+            "Avoid unnecessary additives",
+            "Support efficient breakdown and absorption",
+          ].map((item, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: TEAL, flexShrink: 0, marginTop: 8 }} />
+              <span
+                style={{ fontFamily: inter, fontWeight: 400, color: DARK_TEAL, lineHeight: 1.4, letterSpacing: "-0.4px" }}
+                className="text-base md:text-[20px]"
+              >
+                {item}
+              </span>
+            </div>
+          ))}
+        </div>
       </FadeIn>
     </section>
   );
