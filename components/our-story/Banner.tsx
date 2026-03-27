@@ -79,7 +79,7 @@ export function Banner() {
           fontFamily: inter,
           fontWeight: 400,
           color: "white",
-          maxWidth: 719,
+          maxWidth: 640,
           textAlign: "center",
           letterSpacing: "-0.4px",
           lineHeight: 1.4,
