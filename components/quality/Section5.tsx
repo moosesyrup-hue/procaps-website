@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeIn } from "./FadeIn";
-import { TealLine, stix, inter, TEAL, DARK_TEAL, rightImg } from "./tokens";
+import { TealLine, BulletCheck, stix, inter, TEAL, DARK_TEAL, rightImg } from "./tokens";
 
 export function Section5() {
   return (
@@ -92,7 +92,7 @@ export function Section5() {
             "Is verified again in our own state-of-the-art laboratory",
           ].map((item, i) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-              <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: TEAL, flexShrink: 0, marginTop: 8 }} />
+              <BulletCheck />
               <span
                 style={{ fontFamily: inter, fontWeight: 400, color: DARK_TEAL, lineHeight: 1.4, letterSpacing: "-0.4px" }}
                 className="text-base md:text-[20px]"

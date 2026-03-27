@@ -29,6 +29,29 @@ export const section9PlayIcon = "https://www.figma.com/api/mcp/asset/e381e912-83
 export const stix = "var(--font-stix), Georgia, serif";
 export const inter = "var(--font-inter), Inter, sans-serif";
 
+// ─── Bullet checkmark ─────────────────────────────────────────────────────────
+export function BulletCheck() {
+  return (
+    <div
+      style={{
+        width: 20,
+        height: 20,
+        borderRadius: "50%",
+        backgroundColor: TEAL,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+        marginTop: 2,
+      }}
+    >
+      <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+        <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </div>
+  );
+}
+
 // ─── Decorative line ──────────────────────────────────────────────────────────
 export function TealLine({ width = 50 }: { width?: number }) {
   return (
