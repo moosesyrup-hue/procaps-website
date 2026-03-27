@@ -51,7 +51,7 @@ function ComparisonCard({
           style={{
             fontFamily: stix,
             fontSize: 34,
-            fontWeight: 500,
+            fontWeight: 400,
             color: DARK_TEAL,
             letterSpacing: "-0.68px",
             margin: 0,
