@@ -1760,21 +1760,21 @@ function Section10() {
 const testimonials = [
   {
     quote:
-      "I've been taking ProCaps vitamins for over 20 years. The quality is unmistakable — I can actually feel the difference when I skip a day.",
+      "I can actually feel the difference in quality. No stomach upset, no fillers — just pure nutrition that works.",
     name: "Sarah M.",
-    role: "Loyal customer since 2003",
+    role: "Healthy Hair Skin & Nails Customer",
   },
   {
     quote:
-      "As a nurse, I'm skeptical of supplement claims. ProCaps is the only brand I recommend to my patients because I trust their transparency.",
-    name: "Dr. Patricia L.",
-    role: "Registered Nurse",
+      "After 40 years of trying different brands, I finally found supplements I can trust. The purity is noticeable.",
+    name: "Robert K.",
+    role: "Essential 1, NuOnce Customer",
   },
   {
     quote:
-      "Andrew's commitment to purity is real. No fillers, no nonsense. Just exactly what the label says. I won't buy supplements from anyone else.",
-    name: "James R.",
-    role: "Health-conscious consumer",
+      "As someone with a sensitive stomach, these are the only vitamins that don't cause discomfort. The pH balanced formula really works.",
+    name: "Jennifer L.",
+    role: "Digestive Health Customer",
   },
 ];
 
