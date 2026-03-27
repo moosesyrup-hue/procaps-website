@@ -37,7 +37,8 @@ export function BulletCheck() {
         width: 20,
         height: 20,
         borderRadius: "50%",
-        backgroundColor: TEAL,
+        backgroundColor: "transparent",
+        border: `1.5px solid ${TEAL}`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -46,7 +47,7 @@ export function BulletCheck() {
       }}
     >
       <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-        <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M1 4L3.5 6.5L9 1" stroke={TEAL} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     </div>
   );

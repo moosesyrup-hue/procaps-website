@@ -89,7 +89,8 @@ function ComparisonCard({
                   width: 20,
                   height: 20,
                   borderRadius: "50%",
-                  backgroundColor: "#C8272D",
+                  backgroundColor: "transparent",
+                  border: "1.5px solid #C8272D",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -98,7 +99,7 @@ function ComparisonCard({
                 }}
               >
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M2 2L8 8M8 2L2 8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+                  <path d="M2 2L8 8M8 2L2 8" stroke="#C8272D" strokeWidth="1.8" strokeLinecap="round"/>
                 </svg>
               </div>
             )}
