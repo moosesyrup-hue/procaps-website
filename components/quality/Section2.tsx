@@ -82,12 +82,12 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
         {/* Signature block — mobile only, sits below paragraph */}
         <div
           className="flex md:hidden"
-          style={{ flexDirection: "column", alignItems: "center", gap: 10 }}
+          style={{ flexDirection: "column", alignItems: "center", gap: 10, marginTop: 16 }}
         >
           <img
             src={signatureImg}
             alt="Andrew Lessman signature"
-            style={{ height: 40, width: "auto", objectFit: "contain", filter: "invert(35%) sepia(80%) saturate(400%) hue-rotate(145deg) brightness(90%)" }}
+            style={{ height: 40, width: "auto", objectFit: "contain", filter: "brightness(0) saturate(100%) invert(38%) sepia(61%) saturate(900%) hue-rotate(148deg) brightness(92%)" }}
           />
           <p style={{ fontFamily: inter, fontSize: 15, color: DARK_TEAL, margin: 0, lineHeight: 1.3 }}>
             <span style={{ fontWeight: 600 }}>- Andrew Lessman,</span>
