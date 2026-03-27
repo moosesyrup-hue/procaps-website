@@ -44,7 +44,8 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
           }}
           className="text-[42px] md:text-[64px] xl:text-[92px]"
         >
-          All vitamins are{" "}
+          All vitamins are
+          <br />
           <em style={{ color: TEAL, fontStyle: "italic" }}>not</em>
           {" "}created equal.
         </h2>
