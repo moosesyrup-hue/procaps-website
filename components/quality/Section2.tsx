@@ -82,7 +82,7 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
         {/* Signature block — mobile only, sits below paragraph */}
         <div
           className="flex md:hidden"
-          style={{ flexDirection: "column", alignItems: "center", gap: 10, marginTop: 16 }}
+          style={{ flexDirection: "column", alignItems: "center", gap: 16, marginTop: 24 }}
         >
           {/* Mask technique: exact #009296 with no filter approximation */}
           <div style={{ position: "relative", display: "inline-block", height: 40 }}>
