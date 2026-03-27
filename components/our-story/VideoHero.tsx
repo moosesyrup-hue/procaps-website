@@ -72,7 +72,7 @@ export function VideoHero() {
           }}
           className="text-[42px] md:text-[64px] xl:text-[92px]"
         >
-          Supplements p<em style={{ fontStyle: "italic" }}>ow</em>ered by the sun.
+          Supplements <em style={{ fontStyle: "italic" }}>powered</em> by the sun.
         </h2>
 
         <p
