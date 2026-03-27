@@ -3,6 +3,7 @@
 import { inter } from "../quality/tokens";
 import { Header } from "../quality/Header";
 import { Banner } from "./Banner";
+import { VideoHero } from "./VideoHero";
 
 export function OurStoryPage() {
   return (
@@ -11,6 +12,7 @@ export function OurStoryPage() {
       <Banner />
       {/* Spacer to absorb pill overflow and prevent scroll jank */}
       <div className="pt-[180px] md:pt-[260px] xl:pt-[300px]" style={{ backgroundColor: "white" }} />
+      <VideoHero />
     </div>
   );
 }
