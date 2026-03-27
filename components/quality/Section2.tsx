@@ -4,6 +4,8 @@ import { useState } from "react";
 import { FadeIn } from "./FadeIn";
 import { TealLine, stix, inter, TEAL, DARK_TEAL } from "./tokens";
 
+const signatureImg = "https://www.figma.com/api/mcp/asset/6bc054ca-fd1c-4171-b4e0-0e663e903b7e";
+
 export function Section2({ onPlay }: { onPlay: () => void }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -76,6 +78,22 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
         >
           The reality is that most supplement companies don&rsquo;t manufacture their own products. They are brands—not manufacturers—relying on third parties to produce formulas that often include unnecessary additives. Tablets, for example, require binders, glues, lubricants, and coatings just to hold together. These are not there for your benefit—they are there for manufacturing convenience. Because we manufacture our own products, we&rsquo;re able to avoid these manufacturing shortcuts and choose delivery forms that prioritize ingredient integrity over production convenience.
         </p>
+
+        {/* Signature block — mobile only, sits below paragraph */}
+        <div
+          className="flex md:hidden"
+          style={{ flexDirection: "column", alignItems: "center", gap: 10 }}
+        >
+          <img
+            src={signatureImg}
+            alt="Andrew Lessman signature"
+            style={{ height: 40, width: "auto", objectFit: "contain", filter: "invert(35%) sepia(80%) saturate(400%) hue-rotate(145deg) brightness(90%)" }}
+          />
+          <p style={{ fontFamily: inter, fontSize: 15, color: DARK_TEAL, margin: 0, lineHeight: 1.3 }}>
+            <span style={{ fontWeight: 600 }}>- Andrew Lessman,</span>
+            <span style={{ fontWeight: 400 }}> ProCaps Founder</span>
+          </p>
+        </div>
       </FadeIn>
 
       {/* Video section */}
@@ -144,25 +162,24 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
           />
         </div>
 
-        {/* Bottom-left: Signature stacked above name */}
+        {/* Bottom-left: Signature stacked above name — desktop only */}
         <div
           style={{
             position: "absolute",
             bottom: 52,
             left: 50,
-            display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
             gap: 12,
             zIndex: 2,
           }}
-          className="bottom-4 left-4 md:bottom-8 md:left-8 xl:bottom-[52px] xl:left-[50px]"
+          className="hidden md:flex md:bottom-8 md:left-8 xl:bottom-[52px] xl:left-[50px]"
         >
           <img
-            src="https://www.figma.com/api/mcp/asset/6bc054ca-fd1c-4171-b4e0-0e663e903b7e"
+            src={signatureImg}
             alt="Andrew Lessman signature"
             style={{ height: 59, width: 380, objectFit: "contain" }}
-            className="h-[36px] w-auto md:h-[48px] xl:h-[59px] xl:w-[380px]"
+            className="h-[48px] w-auto xl:h-[59px] xl:w-[380px]"
           />
           <p
             style={{
@@ -172,7 +189,7 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
               margin: 0,
               lineHeight: 1.3,
             }}
-            className="text-sm md:text-base xl:text-[20px]"
+            className="text-base xl:text-[20px]"
           >
             <span style={{ fontWeight: 600 }}>- Andrew Lessman,</span>
             <span style={{ fontWeight: 400 }}> ProCaps Founder</span>
