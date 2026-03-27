@@ -27,6 +27,7 @@ export function Section6() {
             margin: 0,
             marginBottom: 24,
             maxWidth: 900,
+            textWrap: "balance",
           }}
           className="text-[22px] md:text-[28px] xl:text-[36px]"
         >

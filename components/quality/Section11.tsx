@@ -133,7 +133,7 @@ export function Section11() {
         >
           Trusted by
           <br className="md:hidden" />
-          {" "}health-conscious people.
+          {" "}<span style={{ whiteSpace: "nowrap" }}>health-conscious</span> people.
         </h2>
 
         <TealLine width={50} />
