@@ -131,7 +131,9 @@ export function Section11() {
           }}
           className="text-[42px] md:text-[64px] xl:text-[92px]"
         >
-          Trusted by health-conscious people.
+          Trusted by
+          <br className="md:hidden" />
+          {" "}health-conscious people.
         </h2>
 
         <TealLine width={50} />
