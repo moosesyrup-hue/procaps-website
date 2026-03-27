@@ -49,7 +49,6 @@ export function Section7() {
             color: TEAL,
             letterSpacing: "2px",
             margin: 0,
-            fontSize: 20,
           }}
           className="text-sm md:text-[20px]"
         >

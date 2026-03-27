@@ -64,7 +64,6 @@ function ComparisonCard({
         <p
           style={{
             fontFamily: inter,
-            fontSize: 20,
             fontWeight: 400,
             color: TEAL,
             margin: 0,
