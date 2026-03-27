@@ -39,7 +39,9 @@ export function Section9({ onPlay }: { onPlay: () => void }) {
           }}
           className="text-[36px] md:text-[48px] xl:text-[58px]"
         >
-          Informed choices require transparency.
+          Informed
+          <br className="hidden md:block" />
+          {" "}choices require transparency.
         </h2>
 
         <TealLine width={50} />
