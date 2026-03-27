@@ -19,6 +19,13 @@ export function Banner() {
     };
   }
 
+  function fadeOnly(delay: number): React.CSSProperties {
+    return {
+      opacity: mounted ? 1 : 0,
+      transition: `opacity 0.7s ease ${delay}ms`,
+    };
+  }
+
   return (
     <section
       style={{
@@ -33,18 +40,18 @@ export function Banner() {
       }}
       className="min-h-[500px] md:min-h-[700px] xl:h-[875px] px-5 md:px-10 pt-[40px] xl:pt-[58px]"
     >
-      {/* Vertical decorative line — draws downward */}
-      <div
-        style={{
-          width: 1,
-          backgroundColor: "rgba(255,255,255,0.5)",
-          marginBottom: 48,
-          flexShrink: 0,
-          height: mounted ? 111 : 0,
-          opacity: mounted ? 1 : 0,
-          transition: "height 0.6s ease 0ms, opacity 0.6s ease 0ms",
-        }}
-      />
+      {/* Vertical decorative line — fixed container so growth doesn't shift layout */}
+      <div style={{ height: 111, marginBottom: 48, flexShrink: 0, display: "flex", alignItems: "flex-start" }}>
+        <div
+          style={{
+            width: 1,
+            backgroundColor: "rgba(255,255,255,0.5)",
+            height: mounted ? 111 : 0,
+            opacity: mounted ? 1 : 0,
+            transition: "height 0.6s ease 0ms, opacity 0.6s ease 0ms",
+          }}
+        />
+      </div>
 
       {/* Headline */}
       <h1
@@ -61,7 +68,12 @@ export function Banner() {
         className="text-[56px] md:text-[80px] xl:text-[120px]"
       >
         <span style={{ fontWeight: 400 }}>Quality </span>
-        <em style={{ color: AQUA, fontStyle: "italic", fontWeight: 400 }}>without</em>
+        <em style={{
+          color: mounted ? AQUA : "white",
+          fontStyle: "italic",
+          fontWeight: 400,
+          transition: "color 0.8s ease 900ms",
+        }}>without</em>
         <br />
         <span style={{ fontWeight: 400 }}>compromise.</span>
       </h1>
