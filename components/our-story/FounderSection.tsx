@@ -21,8 +21,8 @@ export function FounderSection({ onPlay }: { onPlay: () => void }) {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          marginBottom: 60,
         }}
+        className="mb-[40px] md:mb-[60px] xl:mb-[100px]"
       >
         <h2
           style={{
