@@ -84,11 +84,23 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
           className="flex md:hidden"
           style={{ flexDirection: "column", alignItems: "center", gap: 10, marginTop: 16 }}
         >
-          <img
-            src={signatureImg}
-            alt="Andrew Lessman signature"
-            style={{ height: 40, width: "auto", objectFit: "contain", filter: "brightness(0) saturate(100%) invert(38%) sepia(61%) saturate(900%) hue-rotate(148deg) brightness(92%)" }}
-          />
+          {/* Mask technique: exact #009296 with no filter approximation */}
+          <div style={{ position: "relative", display: "inline-block", height: 40 }}>
+            <img src={signatureImg} alt="" style={{ height: 40, width: "auto", display: "block", opacity: 0 }} />
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              backgroundColor: TEAL,
+              WebkitMaskImage: `url(${signatureImg})`,
+              WebkitMaskSize: "contain",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskPosition: "center",
+              maskImage: `url(${signatureImg})`,
+              maskSize: "contain",
+              maskRepeat: "no-repeat",
+              maskPosition: "center",
+            }} />
+          </div>
           <p style={{ fontFamily: inter, fontSize: 15, color: DARK_TEAL, margin: 0, lineHeight: 1.3 }}>
             <span style={{ fontWeight: 600 }}>- Andrew Lessman,</span>
             <span style={{ fontWeight: 400 }}> ProCaps Founder</span>
