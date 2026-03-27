@@ -85,8 +85,8 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
           style={{ flexDirection: "column", alignItems: "center", gap: 16, marginTop: 24 }}
         >
           {/* Mask technique: exact #009296 with no filter approximation */}
-          <div style={{ position: "relative", display: "inline-block", height: 40 }}>
-            <img src={signatureImg} alt="" style={{ height: 40, width: "auto", display: "block", opacity: 0 }} />
+          <div style={{ position: "relative", display: "inline-block", height: 40, width: 258 }}>
+            <img src={signatureImg} alt="" style={{ height: 40, width: 258, objectFit: "contain", display: "block", opacity: 0 }} />
             <div style={{
               position: "absolute",
               inset: 0,
