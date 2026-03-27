@@ -68,7 +68,8 @@ export function Section7() {
           }}
           className="text-[36px] md:text-[48px] xl:text-[58px]"
         >
-          Why we will{" "}
+          Why we will
+          <br className="hidden md:block" />
           <em style={{ color: TEAL, fontStyle: "italic" }}>never</em>
           {" "}make tablets.
         </h2>
