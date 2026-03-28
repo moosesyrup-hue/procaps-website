@@ -8,6 +8,7 @@ import { VideoHero } from "./VideoHero";
 import { FounderSection } from "./FounderSection";
 import { EarlyDays } from "./EarlyDays";
 import { WordSpreads } from "./WordSpreads";
+import { WordSpreads2 } from "./WordSpreads2";
 import { VideoModal } from "../quality/VideoModal";
 import { VideoId } from "../quality/types";
 
@@ -24,6 +25,7 @@ export function OurStoryPage() {
       <FounderSection onPlay={() => setActiveVideo("andrew-intro")} />
       <EarlyDays />
       <WordSpreads />
+      <WordSpreads2 />
 
       {activeVideo && (
         <VideoModal videoId={activeVideo} onClose={() => setActiveVideo(null)} />
