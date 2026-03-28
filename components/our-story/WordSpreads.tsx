@@ -41,7 +41,7 @@ export function WordSpreads() {
               margin: 0,
             }}
           >
-            Quality could not be maintained if the products were permitted to languish on store shelves.&rdquo;
+            &ldquo;Quality could not be maintained if the products were permitted to languish on store shelves.&rdquo;
           </p>
           <p
             style={{
