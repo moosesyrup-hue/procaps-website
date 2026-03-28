@@ -41,7 +41,7 @@ export function WordSpreads2() {
               margin: 0,
             }}
           >
-            &ldquo;Quality could not be maintained if the products were permitted to languish on store shelves.&rdquo;
+            &ldquo;If you make the best products in the world, the strongest bridge between you and a new customer is education.&rdquo;
           </p>
           <p
             style={{
@@ -82,8 +82,8 @@ export function WordSpreads2() {
           }}
           className="text-[36px] md:text-[48px] xl:text-[58px]"
         >
-          The word spreads —{" "}
-          <em style={{ color: TEAL, fontStyle: "italic" }}>directly.</em>
+          Direct. Informed.{" "}
+          <em style={{ color: TEAL, fontStyle: "italic" }}>Trusted.</em>
         </h2>
 
         <TealLine width={50} />
