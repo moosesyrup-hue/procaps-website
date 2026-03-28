@@ -99,7 +99,7 @@ export function WordSpreads2() {
           }}
           className="text-base md:text-[20px]"
         >
-          By the mid-1980s, Andrew Lessman and The Winning Combination (which later became known as YourVitamins, and ultimately ProCaps Laboratories) were confronted with a formidable challenge: how to bring the product line to an increasingly widening and receptive market without diminishing the line&rsquo;s unparalleled quality. Andrew knew quality could not be maintained if the products were permitted to languish on store shelves or sit in a huge mass-market warehouse. Andrew had to find a way to spread the word about his products while retaining direct control over how they were handled and stored. It was the only way he could truly assure the quality and potency of his products.
+          Quite simply, Direct Response Marketing eliminates the middle-man and allows the consumer to go straight to the manufacturer in order to make a purchase, without the intermediate step of going to a store. It is simple, straightforward, 100% efficient and absolutely reliable. Andrew could, and still does, maintain complete control over the quality, safety, potency and storage of his products, while the customer controls every other aspect of the transaction.
         </p>
 
         <p
@@ -113,7 +113,7 @@ export function WordSpreads2() {
           }}
           className="text-base md:text-[20px]"
         >
-          Andrew found that multilevel marketing was not an option. Individual distributors had neither the expertise nor the training to adequately represent any product in which hard science plays such an integral role, nor did they have the facilities to properly store the product. That left him with one alternative — Direct Response Marketing.
+          Andrew&rsquo;s earliest direct response advertisements were placed in leading magazines and newspapers, as well as on radio and television. These ads strictly adhered to Andrew&rsquo;s premise that, &ldquo;if you make the best products in the world, the strongest bridge between you and a new customer is education.&rdquo; The advertisements were information-rich with no hype or exaggerated claims — just straight science and straightforward facts. These ads were very well received, and the company began to grow rapidly as more and more people grew dissatisfied with ordinary retail supplements and sought a higher-quality alternative.
         </p>
       </FadeIn>
     </section>
