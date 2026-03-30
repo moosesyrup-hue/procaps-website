@@ -17,6 +17,7 @@ import { Section9 } from "./Section9";
 import { Section10 } from "./Section10";
 import { Section11 } from "./Section11";
 import { VideoModal } from "./VideoModal";
+import { Footer } from "../Footer";
 
 export function QualityPage() {
   const [activeVideo, setActiveVideo] = useState<VideoId | null>(null);
@@ -38,6 +39,7 @@ export function QualityPage() {
       <Section9 onPlay={() => setActiveVideo("andrew-transparency")} />
       <Section10 />
       <Section11 />
+      <Footer />
 
       {activeVideo && (
         <VideoModal videoId={activeVideo} onClose={() => setActiveVideo(null)} />

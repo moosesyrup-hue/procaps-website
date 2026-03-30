@@ -16,6 +16,7 @@ import { ClosingSection } from "./ClosingSection";
 import { WordSpreads6 } from "./WordSpreads6";
 import { VideoModal } from "../quality/VideoModal";
 import { VideoId } from "../quality/types";
+import { Footer } from "../Footer";
 
 export function OurStoryPage() {
   const [activeVideo, setActiveVideo] = useState<VideoId | null>(null);
@@ -36,6 +37,7 @@ export function OurStoryPage() {
       <WordSpreads5 />
       <ClosingSection />
       <WordSpreads6 />
+      <Footer />
 
       {activeVideo && (
         <VideoModal videoId={activeVideo} onClose={() => setActiveVideo(null)} />
