@@ -62,15 +62,15 @@ export function Banner() {
         }}
         className="text-[56px] md:text-[80px] xl:text-[120px]"
       >
-        <span style={{ fontWeight: 400 }}>Made </span>
+        <span style={{ fontWeight: 400 }}>The world&rsquo;s </span>
         <em style={{
           color: mounted ? AQUA : "white",
           fontStyle: "italic",
           fontWeight: 400,
           transition: "color 0.8s ease 900ms",
-        }}>uniquely.</em>
+        }}>finest</em>
         <br />
-        <span style={{ fontWeight: 400 }}>For a reason.</span>
+        <span style={{ fontWeight: 400 }}>supplements.</span>
       </h1>
 
       {/* Sub-paragraph */}
