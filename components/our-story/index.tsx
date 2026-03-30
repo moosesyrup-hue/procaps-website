@@ -13,6 +13,7 @@ import { WordSpreads3 } from "./WordSpreads3";
 import { WordSpreads4 } from "./WordSpreads4";
 import { WordSpreads5 } from "./WordSpreads5";
 import { ClosingSection } from "./ClosingSection";
+import { WordSpreads6 } from "./WordSpreads6";
 import { VideoModal } from "../quality/VideoModal";
 import { VideoId } from "../quality/types";
 
@@ -34,6 +35,7 @@ export function OurStoryPage() {
       <WordSpreads4 onPlay={() => setActiveVideo("andrew-intro")} />
       <WordSpreads5 />
       <ClosingSection />
+      <WordSpreads6 />
 
       {activeVideo && (
         <VideoModal videoId={activeVideo} onClose={() => setActiveVideo(null)} />

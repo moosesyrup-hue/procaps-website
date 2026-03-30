@@ -118,6 +118,8 @@ export function ClosingSection() {
         >
           Enhance health naturally by sustainably and ethically creating the safest, purest and most effective nutritional supplements on earth.
         </p>
+
+        <div style={{ height: 40 }} />
       </FadeIn>
     </section>
   );
