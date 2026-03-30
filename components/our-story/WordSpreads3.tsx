@@ -3,19 +3,19 @@
 import { FadeIn } from "../quality/FadeIn";
 import { TealLine, stix, inter, TEAL, DARK_TEAL } from "../quality/tokens";
 
-export function WordSpreads() {
+export function WordSpreads3() {
   return (
     <section
       style={{
         backgroundColor: "white",
         display: "flex",
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "center",
         gap: 80,
       }}
       className="flex-col md:flex-row px-5 md:px-10 xl:px-[40px] py-[60px] md:py-[80px] xl:py-[120px]"
     >
-      {/* Left: teal quote card */}
+      {/* Right: teal quote card */}
       <FadeIn
         style={{ flexShrink: 0 }}
         className="w-full md:w-[550px]"
@@ -41,7 +41,7 @@ export function WordSpreads() {
               margin: 0,
             }}
           >
-            &ldquo;Quality could not be maintained if the products were permitted to languish on store shelves.&rdquo;
+            &ldquo;People will listen to an honest, respectful presentation without sensationalism.&rdquo;
           </p>
           <p
             style={{
@@ -59,7 +59,7 @@ export function WordSpreads() {
         </div>
       </FadeIn>
 
-      {/* Right: headline + copy */}
+      {/* Left: headline + copy */}
       <FadeIn
         delay={150}
         style={{
@@ -82,8 +82,8 @@ export function WordSpreads() {
           }}
           className="text-[36px] md:text-[48px] xl:text-[58px]"
         >
-          The word spreads —{" "}
-          <em style={{ color: TEAL, fontStyle: "italic" }}>directly.</em>
+          Direct to{" "}
+          <em style={{ color: TEAL, fontStyle: "italic" }}>Television.</em>
         </h2>
 
         <TealLine width={50} />
@@ -99,7 +99,7 @@ export function WordSpreads() {
           }}
           className="text-base md:text-[20px]"
         >
-          By the mid-1980s, Andrew Lessman and The Winning Combination (which later became known as YourVitamins, and ultimately ProCaps Laboratories) were confronted with a formidable challenge: how to bring the product line to an increasingly widening and receptive market without diminishing the line&rsquo;s unparalleled quality. Andrew knew quality could not be maintained if the products were permitted to languish on store shelves or sit in a huge mass-market warehouse. Andrew had to find a way to spread the word about his products while retaining direct control over how they were handled and stored. It was the only way he could truly assure the quality and potency of his products.
+          During the late 1980s, a new phenomenon in direct marketing began to attract America&rsquo;s attention: Television Home Shopping. TV retailing was in its infancy when QVC approached Andrew Lessman to suggest that he be the first to offer nutritional supplements on television. Andrew was initially reluctant &mdash; wary of the aggressive tendency of TV selling and the natural bias of television toward visual products like jewelry and electronics. But ultimately, Andrew elected to go on-air himself, without relying on the borrowed interest of a celebrity, and without adapting his presentation for TV&rsquo;s visual or &ldquo;entertainment&rdquo; requirements.
         </p>
 
         <p
@@ -113,7 +113,7 @@ export function WordSpreads() {
           }}
           className="text-base md:text-[20px]"
         >
-          Andrew found that multilevel marketing was not an option. Individual distributors had neither the expertise nor the training to adequately represent any product in which hard science plays such an integral role, nor did they have the facilities to properly store the product. That left him with one alternative — Direct Response Marketing.
+          Avoiding audacious showmanship and exhortation, his appearances remained heavily informative and education-based. The audience response far exceeded anyone&rsquo;s best expectations, confirming once again that people will listen to an honest, respectful presentation without sensationalism.
         </p>
       </FadeIn>
     </section>

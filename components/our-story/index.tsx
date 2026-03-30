@@ -9,6 +9,10 @@ import { FounderSection } from "./FounderSection";
 import { EarlyDays } from "./EarlyDays";
 import { WordSpreads } from "./WordSpreads";
 import { WordSpreads2 } from "./WordSpreads2";
+import { WordSpreads3 } from "./WordSpreads3";
+import { WordSpreads4 } from "./WordSpreads4";
+import { WordSpreads5 } from "./WordSpreads5";
+import { ClosingSection } from "./ClosingSection";
 import { VideoModal } from "../quality/VideoModal";
 import { VideoId } from "../quality/types";
 
@@ -26,6 +30,10 @@ export function OurStoryPage() {
       <EarlyDays />
       <WordSpreads />
       <WordSpreads2 />
+      <WordSpreads3 />
+      <WordSpreads4 onPlay={() => setActiveVideo("andrew-intro")} />
+      <WordSpreads5 />
+      <ClosingSection />
 
       {activeVideo && (
         <VideoModal videoId={activeVideo} onClose={() => setActiveVideo(null)} />
