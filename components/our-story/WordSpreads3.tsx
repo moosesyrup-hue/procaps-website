@@ -83,7 +83,7 @@ export function WordSpreads3() {
           className="text-[36px] md:text-[48px] xl:text-[58px]"
         >
           Direct to{" "}
-          <em style={{ color: TEAL, fontStyle: "italic" }}>Television.</em>
+          <em style={{ color: TEAL, fontStyle: "italic" }}>television.</em>
         </h2>
 
         <TealLine width={50} />
