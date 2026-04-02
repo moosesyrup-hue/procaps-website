@@ -145,7 +145,8 @@ export function WordSpreads4({ onPlay }: { onPlay: () => void }) {
           }}
           className="text-[36px] md:text-[48px] xl:text-[58px]"
         >
-          <em style={{ color: TEAL, fontStyle: "italic" }}>A move that changed everything.</em>
+          A move that changed{" "}
+          <em style={{ color: TEAL, fontStyle: "italic" }}>everything.</em>
         </h2>
 
         <TealLine width={50} />
