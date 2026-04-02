@@ -176,7 +176,7 @@ export function Footer() {
         {/* Logo + copyright + FDA */}
         <div style={{ display: "flex", flexDirection: "column", gap: 30 }}>
           <img
-            src="https://www.figma.com/api/mcp/asset/ba809479-c059-4024-9922-9defacfcce59"
+            src="/iconlogo.svg"
             alt="ProCaps Laboratories"
             style={{ width: 109, height: 40, objectFit: "contain", display: "block" }}
           />

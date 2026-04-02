@@ -31,7 +31,7 @@ export function Header() {
         {/* Content row — centered */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
           <img
-            src="https://www.figma.com/api/mcp/asset/2f870d19-e5a7-468f-b5b5-a96f3b4b72f9"
+            src="/iconshipping.svg"
             alt=""
             style={{ width: 20, height: 20, objectFit: "contain", flexShrink: 0 }}
           />
@@ -104,7 +104,7 @@ export function Header() {
           }}
         >
           <img
-            src="https://www.figma.com/api/mcp/asset/ba809479-c059-4024-9922-9defacfcce59"
+            src="/iconlogo.svg"
             alt="ProCaps"
             style={{ width: 109, height: 40, objectFit: "contain", display: "block" }}
           />

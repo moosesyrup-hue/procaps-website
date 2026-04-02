@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FadeIn } from "../quality/FadeIn";
 import { stix, inter, TEAL, DARK_TEAL, section9Img, section9PlayIcon } from "../quality/tokens";
 
-const signatureImg = "https://www.figma.com/api/mcp/asset/6bc054ca-fd1c-4171-b4e0-0e663e903b7e";
+const signatureImg = "/iconsignatureteal.svg";
 
 export function FounderSection({ onPlay }: { onPlay: () => void }) {
   const [hovered, setHovered] = useState(false);

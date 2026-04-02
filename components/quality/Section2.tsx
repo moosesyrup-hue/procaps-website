@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FadeIn } from "./FadeIn";
 import { TealLine, stix, inter, TEAL, DARK_TEAL } from "./tokens";
 
-const signatureImg = "https://www.figma.com/api/mcp/asset/6bc054ca-fd1c-4171-b4e0-0e663e903b7e";
+const signatureImg = "/iconandrewsignature.svg";
 
 export function Section2({ onPlay }: { onPlay: () => void }) {
   const [hovered, setHovered] = useState(false);
@@ -168,7 +168,7 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
           }}
         >
           <img
-            src="https://www.figma.com/api/mcp/asset/1b43d21e-3036-4bf9-ab0e-efa380219b39"
+            src="/iconplay.svg"
             alt="Play"
             style={{ objectFit: "contain" }}
             className="w-[64px] h-[64px] md:w-[96px] md:h-[96px] xl:w-[129px] xl:h-[129px]"
