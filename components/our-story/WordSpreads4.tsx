@@ -145,8 +145,7 @@ export function WordSpreads4({ onPlay }: { onPlay: () => void }) {
           }}
           className="text-[36px] md:text-[48px] xl:text-[58px]"
         >
-          The word spreads &mdash;{" "}
-          <em style={{ color: TEAL, fontStyle: "italic" }}>directly.</em>
+          <em style={{ color: TEAL, fontStyle: "italic" }}>A move that changed everything.</em>
         </h2>
 
         <TealLine width={50} />
