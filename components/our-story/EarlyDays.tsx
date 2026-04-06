@@ -3,7 +3,7 @@
 import { FadeIn } from "../quality/FadeIn";
 import { TealLine, stix, inter, TEAL, DARK_TEAL, BG_TEAL_LIGHT } from "../quality/tokens";
 
-const rightImg = "https://www.figma.com/api/mcp/asset/00871a39-6ada-4ab7-88ae-cee96379d74f";
+const rightImg = "/andrew-lessman-early.png";
 
 export function EarlyDays() {
   return (

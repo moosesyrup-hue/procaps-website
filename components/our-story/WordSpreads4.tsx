@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FadeIn } from "../quality/FadeIn";
 import { TealLine, stix, inter, TEAL, DARK_TEAL, BG_TEAL_LIGHT, section9PlayIcon } from "../quality/tokens";
 
-const thumbnailImg = "https://www.figma.com/api/mcp/asset/cb40c4ae-a2f0-49ea-955c-64ee7475d55c";
+const thumbnailImg = "/andrew-lessman-blue.png";
 
 export function WordSpreads4({ onPlay }: { onPlay: () => void }) {
   const [hovered, setHovered] = useState(false);

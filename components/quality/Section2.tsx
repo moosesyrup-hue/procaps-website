@@ -130,7 +130,7 @@ export function Section2({ onPlay }: { onPlay: () => void }) {
       >
         {/* Background photo */}
         <img
-          src="https://www.figma.com/api/mcp/asset/e4d39f6d-9c28-405e-8ed2-a18559a10a47"
+          src="/andrew-lessman-teal.png"
           alt="Andrew Lessman"
           style={{
             position: "absolute",

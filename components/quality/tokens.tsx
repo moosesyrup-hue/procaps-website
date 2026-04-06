@@ -9,20 +9,20 @@ export const BG_CREAM = "#f6f2ec";
 export const TEAL_MUTED = "#406c6d";
 
 // ─── Image Assets ─────────────────────────────────────────────────────────────
-export const section4Image = "https://www.figma.com/api/mcp/asset/b0ce97d2-6788-4d08-a8f0-d88bd1efff80";
-export const rightImg = "https://www.figma.com/api/mcp/asset/c061f27a-5683-45c3-be91-1ff8b3ea3e47";
-export const right1Img = "https://www.figma.com/api/mcp/asset/beb603dc-205f-4087-a879-0065ac0c27fa";
-export const stockPhoto = "https://www.figma.com/api/mcp/asset/6e943ef9-103e-4fcf-b946-02e229273b59";
-export const facilityPhoto = "https://www.figma.com/api/mcp/asset/a96be06f-dc11-4fd5-b042-8cb28514563f";
-export const section8Image = "https://www.figma.com/api/mcp/asset/1b632119-3bcc-4728-8607-7f70cfcf3e04";
+export const section4Image = "/quality-capsules-wide.png";
+export const rightImg = "/quality-botanical.png";
+export const right1Img = "/quality-capsules-dish.png";
+export const stockPhoto = "/quality-capsules-wide.png";
+export const facilityPhoto = "/quality-mountains.png";
+export const section8Image = "/quality-mountains.png";
 export const signature = "/iconandrewsignature.svg";
 export const stars = "/iconstars.svg";
 export const logoMain = "/iconlogo.svg";
 export const iconPlay = "/iconplay.svg";
 export const iconPlay1 = "/iconplaysmall.svg";
 export const imgIconPlay = "/iconplaysmall.svg";
-export const pillLargeImg = "https://www.figma.com/api/mcp/asset/46b9e731-0421-4a50-8fb6-6378ada50088";
-export const section9Img = "https://www.figma.com/api/mcp/asset/cb40c4ae-a2f0-49ea-955c-64ee7475d55c";
+export const pillLargeImg = "/quality-pill-large.png";
+export const section9Img = "/andrew-lessman-blue.png";
 export const section9PlayIcon = "/iconplaysmall.svg";
 
 // ─── Font shorthand helpers ───────────────────────────────────────────────────
