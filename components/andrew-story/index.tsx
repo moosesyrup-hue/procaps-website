@@ -3,6 +3,7 @@
 import { Header } from "../quality/Header";
 import { Footer } from "../Footer";
 import { Hero } from "./Hero";
+import { BioContent } from "./BioContent";
 
 export function AndrewStoryPage() {
   return (
@@ -10,6 +11,7 @@ export function AndrewStoryPage() {
       <Header />
       <main style={{ flex: 1 }}>
         <Hero />
+        <BioContent />
       </main>
       <Footer />
     </div>
