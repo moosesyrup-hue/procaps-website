@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FadeIn } from "../quality/FadeIn";
 import { stix, inter, TEAL, DARK_TEAL, section9Img, section9PlayIcon } from "../quality/tokens";
 
@@ -189,7 +190,8 @@ export function FounderSection({ onPlay }: { onPlay: () => void }) {
           </p>
 
           <div style={{ marginTop: 24 }}>
-            <button
+            <Link
+              href="/andrew-story"
               style={{
                 fontFamily: inter,
                 fontWeight: 500,
@@ -197,14 +199,14 @@ export function FounderSection({ onPlay }: { onPlay: () => void }) {
                 letterSpacing: "1.5px",
                 color: "white",
                 backgroundColor: TEAL,
-                border: "none",
                 borderRadius: 100,
                 padding: "14px 28px",
-                cursor: "pointer",
+                textDecoration: "none",
+                display: "inline-block",
               }}
             >
               READ ANDREW&rsquo;S STORY
-            </button>
+            </Link>
           </div>
         </FadeIn>
       </div>
