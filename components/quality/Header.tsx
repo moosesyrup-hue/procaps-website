@@ -71,7 +71,7 @@ export function Header() {
           }}
         >
           {/* Hamburger — mobile only */}
-          <Menu style={iconStyle} strokeWidth={1.5} className="md:hidden" />
+          <Menu style={iconStyle} strokeWidth={1.5} className="lg:hidden" />
 
           {/* Nav links — desktop only */}
           {["SHOP", "QUALITY", "OUR STORY", "SPECIALS"].map((link) => (
@@ -87,7 +87,7 @@ export function Header() {
                 textDecoration: "none",
                 whiteSpace: "nowrap",
               }}
-              className="hidden md:block"
+              className="hidden lg:block"
             >
               {link}
             </a>
@@ -95,12 +95,14 @@ export function Header() {
         </div>
 
         {/* Center: ProCaps logo */}
-        <div
+        <a
+          href="/"
           style={{
             position: "absolute",
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
+            display: "block",
           }}
         >
           <img
@@ -108,7 +110,7 @@ export function Header() {
             alt="ProCaps"
             style={{ width: 109, height: 40, objectFit: "contain", display: "block" }}
           />
-        </div>
+        </a>
 
         {/* Right: icons */}
         <div
@@ -123,8 +125,8 @@ export function Header() {
           }}
         >
           <Search style={iconStyle} strokeWidth={1.5} />
-          <Heart style={iconStyle} strokeWidth={1.5} className="hidden md:block" />
-          <User style={iconStyle} strokeWidth={1.5} className="hidden md:block" />
+          <Heart style={iconStyle} strokeWidth={1.5} className="hidden lg:block" />
+          <User style={iconStyle} strokeWidth={1.5} className="hidden lg:block" />
           <ShoppingCart style={iconStyle} strokeWidth={1.5} />
         </div>
       </div>
