@@ -36,35 +36,23 @@ const SLIDES = [
     mobile:  "/hero-1-mobile.jpg",
   },
   {
-    id: 1,
+    id: 2,
     layout: "left" as Layout,
     headlineParts: { before: "No added fillers, ", accent: "ever.", after: "" },
     singleLine: true,
     body: "Only the purest nutrients, with no binders, fillers, or additives.",
     cta: "LEARN MORE",
     ctaHref: "/quality",
-    desktop: "/hero-4-desktop.jpg",
-    tablet:  "/hero-4-desktop.jpg", // swap when tablet crop is ready
-    mobile:  "/hero-4-mobile.jpg",
+    desktop: "/hero-5-desktop.jpg",
+    tablet:  "/hero-5-tablet.jpg",
+    mobile:  "/hero-5-mobile.jpg",
   },
   {
-    id: 2,
-    layout: "center" as Layout,
-    headlineParts: { before: "No added fillers, ", accent: "ever.", after: "" },
-    singleLine: true,
-    body: "Only the purest nutrients, with no binders, fillers, or additives.",
-    cta: "LEARN MORE",
-    ctaHref: "/quality",
-    desktop: "/hero-2-desktop.jpg",
-    tablet:  "/hero-2-tablet.jpg",
-    mobile:  "/hero-2-mobile.jpg",
-  },
-  {
-    id: 3,
+    id: 5,
     layout: "center" as Layout,
     headlineParts: { before: "Science-driven ", accent: "absorption.", after: "" },
     singleLine: true,
-    body: "Bioactive and micro-granulated ingredients, thoughtfully formulated to support optimal absorption and digestive comfort.",
+    body: <>Bioactive and micro-granulated ingredients, thoughtfully formulated<br />to support optimal absorption and digestive comfort.</>,
     cta: "LEARN MORE",
     ctaHref: "/quality",
     desktop: "/hero-3-desktop.jpg",
@@ -174,7 +162,7 @@ export function HeroCarousel() {
       {slide.layout === "left" ? (
         /* ── Left-aligned layout: vertically centered, text flush left ── */
         <div
-          className="pt-8 sm:pt-0 px-6 sm:pl-[42px] sm:pr-6 items-center sm:items-start justify-start sm:justify-center"
+          className="pt-8 lg:pt-0 px-6 lg:pl-[42px] lg:pr-6 items-center lg:items-start justify-start lg:justify-center"
           style={{
             position: "absolute",
             inset: 0,
@@ -184,7 +172,7 @@ export function HeroCarousel() {
           }}
         >
           <div
-            className="gap-5 sm:gap-[30px] items-center sm:items-start text-center sm:text-left"
+            className="gap-5 sm:gap-[30px] items-center lg:items-start text-center lg:text-left"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -193,7 +181,7 @@ export function HeroCarousel() {
             }}
           >
             {/* Stars + review text */}
-            <div className="gap-3 sm:gap-[22px] items-center sm:items-start" style={{ display: "flex", flexDirection: "column" }}>
+            <div className="gap-3 sm:gap-[22px] items-center lg:items-start" style={{ display: "flex", flexDirection: "column" }}>
               <img src="/iconstars.svg" alt="5 stars" className="h-7" style={{ width: "auto" }} />
               <p
                 className="text-[14px] sm:text-[20px]"
@@ -212,10 +200,10 @@ export function HeroCarousel() {
             </div>
 
             {/* Headline + body */}
-            <div className="gap-3 sm:gap-[20px] items-center sm:items-start" style={{ display: "flex", flexDirection: "column" }}>
+            <div className="gap-3 sm:gap-[20px] items-center lg:items-start" style={{ display: "flex", flexDirection: "column" }}>
               <h2
                 key={`h-${animKey}`}
-                className={`text-[34px] sm:text-[52px] xl:text-[72px] text-center sm:text-left${slide.singleLine ? " whitespace-normal sm:whitespace-nowrap" : ""}`}
+                className={`text-[36px] sm:text-[52px] xl:text-[72px] text-center lg:text-left${slide.singleLine ? " whitespace-normal lg:whitespace-nowrap" : ""}`}
                 style={{
                   fontFamily: stix,
                   fontWeight: WEIGHT_HEADLINE,
@@ -237,7 +225,7 @@ export function HeroCarousel() {
 
               <p
                 key={`b-${animKey}`}
-                className="text-[14px] sm:text-[16px] xl:text-[20px] text-center sm:text-left"
+                className="text-[14px] sm:text-[16px] xl:text-[20px] text-center lg:text-left"
                 style={{
                   fontFamily: inter,
                   fontWeight: WEIGHT_BODY,
@@ -272,7 +260,7 @@ export function HeroCarousel() {
       ) : (
         /* ── Center layout: top-anchored, horizontally centered ── */
         <div
-          className="pt-8 sm:pt-[58px]"
+          className="pt-8 sm:pt-[60px]"
           style={{
             position: "absolute",
             inset: 0,
@@ -319,7 +307,7 @@ export function HeroCarousel() {
             <div className="gap-3 sm:gap-[20px]" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <h2
                 key={`h-${animKey}`}
-                className={`text-[34px] sm:text-[52px] xl:text-[72px]${slide.singleLine ? " whitespace-normal sm:whitespace-nowrap" : ""}`}
+                className={`text-[36px] sm:text-[52px] xl:text-[72px]${slide.singleLine ? " whitespace-normal sm:whitespace-nowrap" : ""}`}
                 style={{
                   fontFamily: stix,
                   fontWeight: WEIGHT_HEADLINE,
