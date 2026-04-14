@@ -13,6 +13,9 @@ import {
 // ─── Constants ────────────────────────────────────────────────────────────────
 const AUTO_MS = 5000;
 
+// ─── Types ────────────────────────────────────────────────────────────────────
+type Layout = "center" | "left";
+
 // ─── Slide data ───────────────────────────────────────────────────────────────
 // Desktop  : 3840 × 1660px (2×) — landscape, image drives container height
 // Tablet   : 1536 × 1400px (2×) — squarish, drop in when ready
@@ -22,6 +25,7 @@ const AUTO_MS = 5000;
 const SLIDES = [
   {
     id: 0,
+    layout: "center" as Layout,
     headlineParts: { before: "The supplement brand ", accent: "trusted", after: " for over 45 years." },
     singleLine: false, // "before" breaks onto its own line at sm+
     body: "Since 1979. Unsurpassed Purity, Quality and Efficacy.",
@@ -33,6 +37,19 @@ const SLIDES = [
   },
   {
     id: 1,
+    layout: "left" as Layout,
+    headlineParts: { before: "No added fillers, ", accent: "ever.", after: "" },
+    singleLine: true,
+    body: "Only the purest nutrients, with no binders, fillers, or additives.",
+    cta: "LEARN MORE",
+    ctaHref: "/quality",
+    desktop: "/hero-4-desktop.jpg",
+    tablet:  "/hero-4-desktop.jpg", // swap when tablet crop is ready
+    mobile:  "/hero-4-mobile.jpg",
+  },
+  {
+    id: 2,
+    layout: "center" as Layout,
     headlineParts: { before: "No added fillers, ", accent: "ever.", after: "" },
     singleLine: true,
     body: "Only the purest nutrients, with no binders, fillers, or additives.",
@@ -43,7 +60,8 @@ const SLIDES = [
     mobile:  "/hero-2-mobile.jpg",
   },
   {
-    id: 2,
+    id: 3,
+    layout: "center" as Layout,
     headlineParts: { before: "Science-driven ", accent: "absorption.", after: "" },
     singleLine: true,
     body: "Bioactive and micro-granulated ingredients, thoughtfully formulated to support optimal absorption and digestive comfort.",
@@ -55,7 +73,7 @@ const SLIDES = [
   },
 ];
 
-type Slide = typeof SLIDES[number];
+type Slide = (typeof SLIDES)[number];
 
 // ─── SlideImage ───────────────────────────────────────────────────────────────
 // cover=false (default) → width:100% height:auto — image drives its own height
@@ -153,114 +171,209 @@ export function HeroCarousel() {
       ))}
 
       {/* ── Content overlay ── */}
-      <div
-        className="pt-8 sm:pt-[58px]"
-        style={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 10,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          paddingLeft: 24,
-          paddingRight: 24,
-        }}
-      >
-        {/* Inner group — constrained width, responsive gap */}
+      {slide.layout === "left" ? (
+        /* ── Left-aligned layout: vertically centered, text flush left ── */
         <div
-          className="gap-5 sm:gap-[30px]"
+          className="pt-8 sm:pt-0 px-6 sm:pl-[42px] sm:pr-6 items-center sm:items-start justify-start sm:justify-center"
           style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 10,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div
+            className="gap-5 sm:gap-[30px] items-center sm:items-start text-center sm:text-left"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              maxWidth: CONTENT_MAX_W,
+            }}
+          >
+            {/* Stars + review text */}
+            <div className="gap-3 sm:gap-[22px] items-center sm:items-start" style={{ display: "flex", flexDirection: "column" }}>
+              <img src="/iconstars.svg" alt="5 stars" className="h-7" style={{ width: "auto" }} />
+              <p
+                className="text-[14px] sm:text-[20px]"
+                style={{
+                  fontFamily: stix,
+                  fontStyle: "italic",
+                  fontWeight: WEIGHT_HEADLINE,
+                  color: DARK_TEAL,
+                  lineHeight: LEADING_BODY,
+                  margin: 0,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                100,000+ verified 5-star reviews
+              </p>
+            </div>
+
+            {/* Headline + body */}
+            <div className="gap-3 sm:gap-[20px] items-center sm:items-start" style={{ display: "flex", flexDirection: "column" }}>
+              <h2
+                key={`h-${animKey}`}
+                className={`text-[34px] sm:text-[52px] xl:text-[72px] text-center sm:text-left${slide.singleLine ? " whitespace-normal sm:whitespace-nowrap" : ""}`}
+                style={{
+                  fontFamily: stix,
+                  fontWeight: WEIGHT_HEADLINE,
+                  color: DARK_TEAL,
+                  lineHeight: LEADING_TIGHT,
+                  letterSpacing: TRACKING_HEADLINE,
+                  margin: 0,
+                  animation: "heroCopyIn 0.55s ease both",
+                }}
+              >
+                <span className={slide.singleLine ? undefined : "inline sm:block"}>
+                  {slide.headlineParts.before}
+                </span>
+                <em style={{ color: TEAL, fontStyle: "italic", fontWeight: WEIGHT_BODY }}>
+                  {slide.headlineParts.accent}
+                </em>
+                {slide.headlineParts.after}
+              </h2>
+
+              <p
+                key={`b-${animKey}`}
+                className="text-[14px] sm:text-[16px] xl:text-[20px] text-center sm:text-left"
+                style={{
+                  fontFamily: inter,
+                  fontWeight: WEIGHT_BODY,
+                  color: DARK_TEAL,
+                  lineHeight: LEADING_BODY,
+                  margin: 0,
+                  animation: "heroCopyIn 0.55s ease 80ms both",
+                }}
+              >
+                {slide.body}
+              </p>
+            </div>
+
+            {/* CTA */}
+            <a
+              key={`cta-${animKey}`}
+              href={slide.ctaHref}
+              onMouseEnter={() => setBtnHovered(true)}
+              onMouseLeave={() => setBtnHovered(false)}
+              style={{
+                ...pillButtonBase,
+                backgroundColor: btnHovered ? TEAL_DEEP : TEAL,
+                boxShadow: btnHovered ? "0 8px 28px rgba(0, 146, 150, 0.32)" : "none",
+                transform: btnHovered ? "translateY(-1px)" : "translateY(0)",
+                animation: "heroCopyIn 0.55s ease 160ms both",
+              }}
+            >
+              {slide.cta}
+            </a>
+          </div>
+        </div>
+      ) : (
+        /* ── Center layout: top-anchored, horizontally centered ── */
+        <div
+          className="pt-8 sm:pt-[58px]"
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 10,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: "100%",
-            maxWidth: CONTENT_MAX_W,
-            textAlign: "center",
+            paddingLeft: 24,
+            paddingRight: 24,
           }}
         >
-          {/* Stars + review text */}
-          <div className="gap-3 sm:gap-[22px]" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <img
-              src="/iconstars.svg"
-              alt="5 stars"
-              className="h-7"
-              style={{ width: "auto" }}
-            />
-            <p
-              className="text-[14px] sm:text-[20px]"
-              style={{
-                fontFamily: stix,
-                fontStyle: "italic",
-                fontWeight: WEIGHT_HEADLINE,
-                color: DARK_TEAL,
-                lineHeight: LEADING_BODY,
-                margin: 0,
-                whiteSpace: "nowrap",
-              }}
-            >
-              100,000+ verified 5-star reviews
-            </p>
-          </div>
-
-          {/* Headline + body */}
-          <div className="gap-3 sm:gap-[20px]" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <h2
-              key={`h-${animKey}`}
-              // singleLine: only nowrap at sm+ — on mobile let it wrap naturally
-              className={`text-[34px] sm:text-[52px] xl:text-[72px]${slide.singleLine ? " whitespace-normal sm:whitespace-nowrap" : ""}`}
-              style={{
-                fontFamily: stix,
-                fontWeight: WEIGHT_HEADLINE,
-                color: DARK_TEAL,
-                lineHeight: LEADING_TIGHT,
-                letterSpacing: TRACKING_HEADLINE,
-                margin: 0,
-                animation: "heroCopyIn 0.55s ease both",
-              }}
-            >
-              <span className={slide.singleLine ? undefined : "inline sm:block"}>
-                {slide.headlineParts.before}
-              </span>
-              <em style={{ color: TEAL, fontStyle: "italic", fontWeight: WEIGHT_BODY }}>
-                {slide.headlineParts.accent}
-              </em>
-              {slide.headlineParts.after}
-            </h2>
-
-            <p
-              key={`b-${animKey}`}
-              className="text-[14px] sm:text-[16px] xl:text-[20px]"
-              style={{
-                fontFamily: inter,
-                fontWeight: WEIGHT_BODY,
-                color: DARK_TEAL,
-                lineHeight: LEADING_BODY,
-                margin: 0,
-                animation: "heroCopyIn 0.55s ease 80ms both",
-              }}
-            >
-              {slide.body}
-            </p>
-          </div>
-
-          {/* CTA */}
-          <a
-            key={`cta-${animKey}`}
-            href={slide.ctaHref}
-            onMouseEnter={() => setBtnHovered(true)}
-            onMouseLeave={() => setBtnHovered(false)}
+          {/* Inner group — constrained width, responsive gap */}
+          <div
+            className="gap-5 sm:gap-[30px]"
             style={{
-              ...pillButtonBase,
-              backgroundColor: btnHovered ? TEAL_DEEP : TEAL,
-              boxShadow: btnHovered ? "0 8px 28px rgba(0, 146, 150, 0.32)" : "none",
-              transform: btnHovered ? "translateY(-1px)" : "translateY(0)",
-              animation: "heroCopyIn 0.55s ease 160ms both",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "100%",
+              maxWidth: CONTENT_MAX_W,
+              textAlign: "center",
             }}
           >
-            {slide.cta}
-          </a>
+            {/* Stars + review text */}
+            <div className="gap-3 sm:gap-[22px]" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <img src="/iconstars.svg" alt="5 stars" className="h-7" style={{ width: "auto" }} />
+              <p
+                className="text-[14px] sm:text-[20px]"
+                style={{
+                  fontFamily: stix,
+                  fontStyle: "italic",
+                  fontWeight: WEIGHT_HEADLINE,
+                  color: DARK_TEAL,
+                  lineHeight: LEADING_BODY,
+                  margin: 0,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                100,000+ verified 5-star reviews
+              </p>
+            </div>
+
+            {/* Headline + body */}
+            <div className="gap-3 sm:gap-[20px]" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <h2
+                key={`h-${animKey}`}
+                className={`text-[34px] sm:text-[52px] xl:text-[72px]${slide.singleLine ? " whitespace-normal sm:whitespace-nowrap" : ""}`}
+                style={{
+                  fontFamily: stix,
+                  fontWeight: WEIGHT_HEADLINE,
+                  color: DARK_TEAL,
+                  lineHeight: LEADING_TIGHT,
+                  letterSpacing: TRACKING_HEADLINE,
+                  margin: 0,
+                  animation: "heroCopyIn 0.55s ease both",
+                }}
+              >
+                <span className={slide.singleLine ? undefined : "inline sm:block"}>
+                  {slide.headlineParts.before}
+                </span>
+                <em style={{ color: TEAL, fontStyle: "italic", fontWeight: WEIGHT_BODY }}>
+                  {slide.headlineParts.accent}
+                </em>
+                {slide.headlineParts.after}
+              </h2>
+
+              <p
+                key={`b-${animKey}`}
+                className="text-[14px] sm:text-[16px] xl:text-[20px]"
+                style={{
+                  fontFamily: inter,
+                  fontWeight: WEIGHT_BODY,
+                  color: DARK_TEAL,
+                  lineHeight: LEADING_BODY,
+                  margin: 0,
+                  animation: "heroCopyIn 0.55s ease 80ms both",
+                }}
+              >
+                {slide.body}
+              </p>
+            </div>
+
+            {/* CTA */}
+            <a
+              key={`cta-${animKey}`}
+              href={slide.ctaHref}
+              onMouseEnter={() => setBtnHovered(true)}
+              onMouseLeave={() => setBtnHovered(false)}
+              style={{
+                ...pillButtonBase,
+                backgroundColor: btnHovered ? TEAL_DEEP : TEAL,
+                boxShadow: btnHovered ? "0 8px 28px rgba(0, 146, 150, 0.32)" : "none",
+                transform: btnHovered ? "translateY(-1px)" : "translateY(0)",
+                animation: "heroCopyIn 0.55s ease 160ms both",
+              }}
+            >
+              {slide.cta}
+            </a>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* ── Dot navigation ── */}
       <div
